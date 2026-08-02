@@ -176,6 +176,11 @@ so nothing needs `npm`/bundling to run — serving `docs/` over `http://`
 - `docs/js/main.js` — entry point; wires the modules together and drives
   the initial `graph.json` fetch.
 
+README.md's "File map" section has a Mermaid diagram of `docs/js/`'s import
+graph (rooted at `main.js`, edges = imports) with the same per-file
+summaries as above; keep both in sync whenever a file under `docs/` is
+added, removed, or its imports/purpose change.
+
 Modules avoid circular imports by passing callbacks at init time rather
 than importing each other directly where a cycle would otherwise form
 (e.g. `panel.js` takes an `onSelectionChange` callback instead of importing

@@ -106,3 +106,64 @@ click a node for details.
 
 This is also the published site, via GitHub Pages (`Settings → Pages →
 Deploy from branch → /docs`).
+
+## File map
+
+`docs/index.html` is the HTML shell, `docs/css/*.css` are plain `<link>`
+stylesheets (theme, base, header, graph, panel, loading), and
+`docs/graph.json` is the committed build artifact the visualizer fetches.
+The JS modules under `docs/js/` are native ES modules; the diagram below
+shows who imports whom, rooted at `main.js` (the `<script type="module">`
+entry point). Kept in sync with `docs/js/` — update whenever a module is
+added, removed, or its imports change.
+
+```mermaid
+graph TD
+    main["main.js<br/>Entry point — wires modules, fetches graph.json"]
+    store["store.js<br/>Shared mutable app state + buildFromGraph()"]
+    render["render.js<br/>draw() — the only module touching the canvas ctx"]
+    theme["theme.js<br/>Reads CSS custom properties; theme-toggle button"]
+    tooltip["tooltip.js<br/>Hover tooltip anchored to a course node"]
+    camera["camera.js<br/>Pan/zoom/resize + pointer/wheel wiring"]
+    panel["panel.js<br/>Detail side panel DOM + drag-to-resize handle"]
+    filters["filters.js<br/>Filter state, URL round-trip, filter controls DOM"]
+    layout["layout.js<br/>Static layered layout (barycenter sweep)"]
+    courseUtils["course-utils.js<br/>Pure term/course-code helpers"]
+    constants["constants.js<br/>Static lookup tables"]
+
+    main --> store
+    main --> render
+    main --> theme
+    main --> tooltip
+    main --> camera
+    main --> panel
+    main --> filters
+
+    camera --> store
+    camera --> render
+    camera --> tooltip
+
+    filters --> store
+    filters --> courseUtils
+    filters --> layout
+    filters --> camera
+    filters --> render
+    filters --> panel
+
+    layout --> store
+    layout --> constants
+    layout --> camera
+
+    render --> store
+    render --> constants
+    render --> theme
+
+    panel --> store
+    panel --> constants
+    panel --> courseUtils
+    panel --> render
+    panel --> camera
+
+    store --> courseUtils
+    courseUtils --> constants
+```
