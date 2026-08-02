@@ -75,7 +75,13 @@ function applyFilters(pushHistory) {
     // their own); exempt them here too, matching nodesForLayout().
     if (visible && !n.stub && !n.terms.includes(store.term)) visible = false;
     if (visible && q) {
-      const hay = (n.id + " " + (n.title || "")).toLowerCase();
+      // Only instructors teaching the currently-selected term count — an
+      // instructor who taught this course in some other term shouldn't
+      // surface it here, since the section shown in the panel won't be theirs.
+      const instructors = n.sections
+        ? n.sections.filter(s => s.term === store.term).flatMap(s => s.instructors || [])
+        : [];
+      const hay = (n.id + " " + (n.title || "") + " " + (n.description || "") + " " + instructors.join(" ")).toLowerCase();
       visible = hay.includes(q);
     }
     n.visible = visible;
