@@ -9,8 +9,13 @@ export function termKey(term) {
 }
 
 // course number's hundreds digit, e.g. EN.553.310 -> "3". Anything that
-// doesn't parse falls into a "9" catch-all column.
+// doesn't parse falls into a "9" catch-all column. Merged 4xy/6xy courses
+// (code contains "/" — see merge_grad_undergrad_pairs() in
+// build_database.py) share column "4" with the handful of 400-level
+// courses that didn't merge (no matching 6xy grad cross-listing) — merging
+// leaves too few of those for a whole separate column to be worth it.
 export function levelDigit(code) {
+  if (code.includes("/")) return "4";
   const m = code.match(/\.(\d)\d{2}$/);
   return m ? m[1] : "9";
 }

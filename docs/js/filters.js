@@ -46,7 +46,7 @@ function restoreFromParams(params) {
   store.term = store.allTerms.includes(term) ? term : DEFAULT_TERM;
   store.showStubs = params.get("external") === "1";
 
-  document.querySelectorAll("#degreeLegend .chip").forEach(chip => {
+  document.querySelectorAll("#degreeLegend .chip[data-degree]").forEach(chip => {
     const on = store.degree.has(chip.dataset.degree);
     chip.querySelector("input").checked = on;
     chip.classList.toggle("active", on);
@@ -135,7 +135,7 @@ function initFilterControls() {
     relayout();
     applyFilters(true);
   });
-  document.querySelectorAll("#degreeLegend .chip").forEach(chip => {
+  document.querySelectorAll("#degreeLegend .chip[data-degree]").forEach(chip => {
     const degree = chip.dataset.degree;
     const input = chip.querySelector("input");
     input.addEventListener("change", () => {

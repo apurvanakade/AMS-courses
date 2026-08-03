@@ -3,7 +3,7 @@
 // whatever's in `store`, so it's cheap and only runs again on interaction.
 
 import { store } from "./store.js";
-import { LEVEL_LABEL, EDGE_STYLE, DEGREE_HUE, COLUMN_WIDTH } from "./constants.js";
+import { LEVEL_LABEL, EDGE_STYLE, DEGREE_HUE, COMBINED_HUE, COLUMN_WIDTH } from "./constants.js";
 import { cssVar, isDarkMode } from "./theme.js";
 
 let canvas, ctx;
@@ -14,13 +14,19 @@ export function initRenderer(canvasEl) {
 }
 
 function nodeColor(n) {
+  const dark = isDarkMode();
+  const lightLo = dark ? 76 : 70; // lightness at the 100s (lightest)
+  const lightHi = dark ? 46 : 32; // lightness at the 800s (darkest)
+  if (n.merged) {
+    // Merged 4xy/6xy courses have no single degree/column to ramp
+    // lightness against — use the ramp's midpoint.
+    const { h, s } = COMBINED_HUE;
+    return `hsl(${h}, ${s}%, ${(lightLo + lightHi) / 2}%)`;
+  }
   if (!n.degreeLevel) return cssVar("--muted"); // stub/external course
   const { h, s } = DEGREE_HUE[n.degreeLevel] || { h: 0, s: 0 };
   const col = Math.min(8, Math.max(1, Number(n.col) || 5));
   const t = (col - 1) / 7; // 0 (100s) .. 1 (800s)
-  const dark = isDarkMode();
-  const lightLo = dark ? 76 : 70; // lightness at the 100s (lightest)
-  const lightHi = dark ? 46 : 32; // lightness at the 800s (darkest)
   const L = lightLo + (lightHi - lightLo) * t;
   return `hsl(${h}, ${s}%, ${L}%)`;
 }

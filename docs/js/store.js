@@ -40,7 +40,10 @@ export function buildFromGraph(g) {
   store.nodes = g.nodes.map(n => ({
     ...n,
     col: levelDigit(n.id),          // course-number column, e.g. "4" for the 400s
-    degreeLevel: degreeBucket(n.level), // "Undergraduate" | "Graduate"
+    // degreeLevel is null (rather than degreeBucket(n.level)) for a merged
+    // 4xy/6xy course, exempting it from the Undergraduate/Graduate filter
+    // the same way stub/external courses are exempt — it belongs to both.
+    degreeLevel: n.merged ? null : degreeBucket(n.level),
     firstTerm: firstTermOf(n),      // earliest term on record, or null for stubs
     seasonOnly: seasonOnlyOf(n),    // 'Fall' | 'Spring' | null (offered in both, or a stub)
     x: 0, y: 0, r: 4,

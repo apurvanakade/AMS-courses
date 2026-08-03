@@ -23,5 +23,14 @@ export const DEGREE_HUE = {
   Graduate:      { h: 152, s: 45 }, // teal-green
 };
 
+// Merged 4xy/6xy undergrad/grad courses (node.merged — see
+// merge_grad_undergrad_pairs() in build_database.py) belong to both
+// degrees at once, so they're colored as a blend of both hues rather than
+// either alone.
+export const COMBINED_HUE = {
+  h: (DEGREE_HUE.Undergraduate.h + DEGREE_HUE.Graduate.h) / 2,
+  s: (DEGREE_HUE.Undergraduate.s + DEGREE_HUE.Graduate.s) / 2,
+};
+
 export const COLUMN_WIDTH = 320;
 export const ROW_HEIGHT = 28;

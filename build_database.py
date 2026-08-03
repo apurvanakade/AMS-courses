@@ -58,7 +58,22 @@ label for independent-study arrangements) are dropped entirely before
 being collapsed into `courses` — see `is_excluded()`. These are one-off
 student/faculty arrangements, not real courses, and nothing else in the
 scraped data references them as a prerequisite, so excluding them doesn't
-leave any dangling stub nodes behind.
+leave any dangling stub nodes behind. (This is also why level digit "5" is
+free for reuse — see next paragraph.)
+
+Many AMS courses are cross-listed as both a 4xy undergraduate number and a
+6xy graduate number with an identical title — the same course, offered at
+two levels. JHU's own data frequently records the real prerequisites under
+only one of the two numbers, leaving the other with nothing but a mutual
+"can't take both" exclusion; treated as separate nodes, the graph
+understates one side's actual prerequisites. `merge_grad_undergrad_pairs()`
+merges each such pair into a single node ("EN.553.4xy/6xy"), combining
+every field losslessly and remapping every course's prerequisite
+references — not just the pair's own — from the two old codes to the
+merged one. The merged node is visible regardless of the visualizer's
+Undergraduate/Graduate filter and shares the 400s column with the handful
+of 400-level courses that had no matching 6xy grad cross-listing to merge
+with (see `levelDigit()` in docs/js/course-utils.js).
 
 Usage:
     python3 build_database.py              # reads data/, writes db/ + docs/graph.json
@@ -71,6 +86,7 @@ import argparse
 import glob
 import json
 import os
+import re
 import sqlite3
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
@@ -185,6 +201,49 @@ def strip_codes(node: dict | None, drop_codes: set[str]) -> dict | None:
     return {"type": node["type"], "children": children}
 
 
+def tree_to_json(node: dict) -> dict:
+    if node["type"] == "COURSE":
+        return {"type": "COURSE", "course": node["course"]}
+    return {"type": node["type"], "children": [tree_to_json(c) for c in node["children"]]}
+
+
+def dedupe_tree(node: dict | None) -> dict | None:
+    """Collapse structurally-identical children out of an ALL/ANY group.
+    Needed after remap_expression() (see merge_grad_undergrad_pairs()) can
+    turn two previously-distinct course references into the same code --
+    e.g. "A OR B" where B is a 6xy course merged into A's own 4xy/6xy
+    node -- which would otherwise render as a nonsensical "A or A"."""
+    if node is None or node["type"] == "COURSE":
+        return node
+    seen_keys: set[str] = set()
+    children = []
+    for child in (dedupe_tree(c) for c in node["children"]):
+        key = json.dumps(tree_to_json(child), sort_keys=True)
+        if key in seen_keys:
+            continue
+        seen_keys.add(key)
+        children.append(child)
+    if len(children) == 1:
+        return children[0]
+    return {"type": node["type"], "children": children}
+
+
+def remap_expression(expression: str, code_map: dict[str, str]) -> str:
+    """Rewrite COURSE tokens in a raw prereq Expression string via
+    code_map (old grad/undergrad course codes -> their merged 4xy/6xy
+    code), leaving AND/OR/parens untouched. Preserves the "^"-joined
+    syntax exactly so parse_expression() can still read the result."""
+    out = []
+    for tok in expression.split("^"):
+        if tok in ("", "(", ")", "AND", "OR"):
+            out.append(tok)
+            continue
+        course = tok[:-3] if tok.endswith("[C]") else tok
+        mapped = code_map.get(course, course)
+        out.append(mapped + "[C]" if tok.endswith("[C]") else mapped)
+    return "^".join(out)
+
+
 # ---------------------------------------------------------------------------
 # Loading + collapsing scraped term data
 # ---------------------------------------------------------------------------
@@ -225,8 +284,9 @@ def build_courses(term_files: list[tuple[str, list[dict]]]) -> tuple[dict[str, d
         "levels": [], "credits": [], "all_departments": set(),
         "areas": set(), "pos_tags": set(), "cross_listed": set(),
         "terms": set(),
-        "sections": [],     # list of (term, section, instructors, syllabus_url,
-                            #           max_seats, seats_available, waitlisted, status)
+        "sections": [],     # list of (offering_code, term, section, instructors,
+                            #           syllabus_url, max_seats, seats_available,
+                            #           waitlisted, status)
         "prereq_raw": [],   # list of (expression, description, is_negative)
         "pcc_titles": {},   # course code -> title, from PrereqCoursesCatalogs
     })
@@ -247,6 +307,10 @@ def build_courses(term_files: list[tuple[str, list[dict]]]) -> tuple[dict[str, d
             row["terms"].add(rec.get("Term"))
             row["cross_listed"].add(rec.get("SectionDetails", {}).get("CrossListed"))
             row["sections"].append((
+                code,   # offering code the section was scraped under -- always
+                        # this course's own code, except after a 4xy/6xy merge
+                        # (see merge_grad_undergrad_pairs()), where a merged
+                        # node's sections carry either sibling's original code
                 rec.get("Term"),
                 rec.get("SectionName"),
                 tuple(rec.get("InstructorsDelimited") or []),
@@ -342,6 +406,7 @@ def build_courses(term_files: list[tuple[str, list[dict]]]) -> tuple[dict[str, d
             "sections": dedupe_preserve_order(row["sections"]),
             "prereq_raw": dedupe_preserve_order(row["prereq_raw"]),
             "stub": False,
+            "merged": False,
         }
 
     for code in sorted(referenced - courses.keys() - drop_codes):
@@ -351,9 +416,92 @@ def build_courses(term_files: list[tuple[str, list[dict]]]) -> tuple[dict[str, d
             "all_departments": [], "areas": [], "pos_tags": [], "cross_listed": False,
             "terms": [], "sections": [], "prereq_raw": [],
             "stub": True,
+            "merged": False,
         }
 
+    courses = merge_grad_undergrad_pairs(courses)
+
     return courses, drop_codes
+
+
+_PAIR_RE = re.compile(r"^EN\.553\.4(\d{2})$")
+
+
+def merge_grad_undergrad_pairs(courses: dict[str, dict]) -> dict[str, dict]:
+    """JHU lists many AMS courses under two numbers -- a 4xy undergraduate
+    section and a matching 6xy graduate section -- with identical titles,
+    credits, and department, differing only in the registrar's level
+    string. Prerequisite data is frequently recorded under only one of the
+    two numbers, with the other carrying nothing but a "may not also take
+    the sibling" exclusion -- e.g. EN.553.613 has no prerequisites of its
+    own in JHU's data; they're all attached to EN.553.413 instead. Treated
+    as two separate graph nodes, this understates one side's real
+    prerequisites.
+
+    This merges each such pair into a single node, code "EN.553.4xy/6xy",
+    combining every field losslessly (sections keep their original
+    offering_code so grad/undergrad sections stay distinguishable; see
+    `row["sections"]` in build_courses()) and remapping *every* course's
+    prerequisite references -- not just the pair's own -- from the two old
+    codes to the merged one, so a third course that requires "EN.553.630"
+    now correctly points at "EN.553.430/630".
+
+    A pair only merges when both sides are real (non-stub) courses with an
+    identical, non-empty title -- matching credits/department/school were
+    independently verified for every current pair, so title equality alone
+    is used as the merge trigger.
+    """
+    pairs: list[tuple[str, str, str]] = []
+    code_map: dict[str, str] = {}
+    for code4 in sorted(courses):
+        m = _PAIR_RE.match(code4)
+        if not m or courses[code4]["stub"]:
+            continue
+        code6 = f"EN.553.6{m.group(1)}"
+        if code6 not in courses or courses[code6]["stub"]:
+            continue
+        row4, row6 = courses[code4], courses[code6]
+        if not row4["title"] or row4["title"] != row6["title"]:
+            continue
+        merged_code = f"EN.553.4{m.group(1)}/6{m.group(1)}"
+        pairs.append((code4, code6, merged_code))
+        code_map[code4] = merged_code
+        code_map[code6] = merged_code
+
+    if not pairs:
+        return courses
+
+    for code4, code6, merged_code in pairs:
+        row4, row6 = courses.pop(code4), courses.pop(code6)
+        courses[merged_code] = {
+            "code": merged_code,
+            "title": row4["title"],
+            "description": row4["description"] or row6["description"],
+            "department": row4["department"] or row6["department"],
+            "school": row4["school"] or row6["school"],
+            "level": " / ".join(lvl for lvl in (row4["level"], row6["level"]) if lvl),
+            "credits": row4["credits"] or row6["credits"],
+            "all_departments": sorted(set(row4["all_departments"]) | set(row6["all_departments"])),
+            "areas": sorted(set(row4["areas"]) | set(row6["areas"])),
+            "pos_tags": sorted(set(row4["pos_tags"]) | set(row6["pos_tags"])),
+            "cross_listed": row4["cross_listed"] or row6["cross_listed"],
+            "terms": sorted(set(row4["terms"]) | set(row6["terms"]), key=_term_sort_key),
+            "sections": dedupe_preserve_order(row4["sections"] + row6["sections"]),
+            "prereq_raw": dedupe_preserve_order(row4["prereq_raw"] + row6["prereq_raw"]),
+            "stub": False,
+            "merged": True,
+        }
+
+    # Remap every course's prereq references -- including the merged pairs'
+    # own, now-combined lists, which still carry mutual references to each
+    # other's old code -- from the old 4xy/6xy codes to the merged code.
+    for row in courses.values():
+        row["prereq_raw"] = dedupe_preserve_order([
+            (remap_expression(expr, code_map) if expr else expr, desc, neg)
+            for expr, desc, neg in row["prereq_raw"]
+        ])
+
+    return courses
 
 
 def dedupe_preserve_order(items: list) -> list:
@@ -393,7 +541,9 @@ CREATE TABLE courses (
     areas TEXT,             -- JSON array
     pos_tags TEXT,          -- JSON array
     cross_listed INTEGER,
-    is_stub INTEGER         -- 1 if only ever seen as a prereq reference
+    is_stub INTEGER,        -- 1 if only ever seen as a prereq reference
+    is_merged INTEGER       -- 1 if this row combines a 4xy/6xy undergrad/grad
+                             -- pair; see merge_grad_undergrad_pairs()
 );
 
 CREATE TABLE course_terms (
@@ -404,6 +554,10 @@ CREATE TABLE course_terms (
 
 CREATE TABLE course_sections (
     code TEXT REFERENCES courses(code),
+    offering_code TEXT,     -- course code the section was actually scraped
+                             -- under; differs from `code` only for a merged
+                             -- 4xy/6xy course, where it's the original 4xy or
+                             -- 6xy side
     term TEXT,
     section TEXT,
     instructors TEXT,       -- JSON array of full names, e.g. "Miller, John C"
@@ -412,7 +566,7 @@ CREATE TABLE course_sections (
     seats_available TEXT,   -- raw JHU field, e.g. "45/60"
     waitlisted TEXT,        -- raw JHU field, e.g. "0" or "N/A"
     status TEXT,            -- e.g. "Open", "Waitlist Only", "Approval Required"
-    PRIMARY KEY (code, term, section)
+    PRIMARY KEY (code, offering_code, term, section)
 );
 
 CREATE TABLE prereq_nodes (
@@ -447,30 +601,36 @@ def build_database(courses: dict[str, dict], drop_codes: set[str], db_path: str,
     for code, c in courses.items():
         cur.execute(
             "INSERT INTO courses (code, title, description, department, school, "
-            "level, credits, all_departments, areas, pos_tags, cross_listed, is_stub) "
-            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            "level, credits, all_departments, areas, pos_tags, cross_listed, is_stub, is_merged) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
             (c["code"], c["title"], c["description"], c["department"], c["school"],
              c["level"], c["credits"], json.dumps(c["all_departments"]),
              json.dumps(c["areas"]), json.dumps(c["pos_tags"]),
-             int(c["cross_listed"]), int(c["stub"])),
+             int(c["cross_listed"]), int(c["stub"]), int(c["merged"])),
         )
         for term in c["terms"]:
             cur.execute("INSERT INTO course_terms (code, term) VALUES (?, ?)", (code, term))
 
-        for term, section, instructors, syllabus_url, max_seats, seats_available, waitlisted, status in c["sections"]:
+        for offering_code, term, section, instructors, syllabus_url, max_seats, seats_available, waitlisted, status in c["sections"]:
             cur.execute(
-                "INSERT INTO course_sections (code, term, section, instructors, syllabus_url, "
-                "max_seats, seats_available, waitlisted, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
-                (code, term, section, json.dumps(list(instructors)), syllabus_url,
+                "INSERT INTO course_sections (code, offering_code, term, section, instructors, "
+                "syllabus_url, max_seats, seats_available, waitlisted, status) "
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                (code, offering_code, term, section, json.dumps(list(instructors)), syllabus_url,
                  max_seats, seats_available, waitlisted, status),
             )
 
+        seen_roots: set[tuple[str, bool]] = set()
         for expression, description, is_negative in c["prereq_raw"]:
             if not expression:
                 continue
-            tree = strip_codes(parse_expression(expression), drop_codes)
+            tree = dedupe_tree(strip_codes(parse_expression(expression), drop_codes | {code}))
             if tree is None:
                 continue
+            root_key = (json.dumps(tree_to_json(tree), sort_keys=True), is_negative)
+            if root_key in seen_roots:
+                continue
+            seen_roots.add(root_key)
             insert_prereq_root(cur, code, tree, is_negative, expression, description)
 
     conn.commit()
@@ -518,12 +678,6 @@ def insert_prereq_child(cur, course_code, node, parent_id):
 # ---------------------------------------------------------------------------
 
 
-def tree_to_json(node: dict) -> dict:
-    if node["type"] == "COURSE":
-        return {"type": "COURSE", "course": node["course"]}
-    return {"type": node["type"], "children": [tree_to_json(c) for c in node["children"]]}
-
-
 def flatten_edges(course_code: str, node: dict, edge_type: str, group_id: int,
                    is_exclusion: bool, edges: list) -> None:
     """Flatten a prereq tree into simple source->target edges for graphs
@@ -559,12 +713,17 @@ def build_graph(courses: dict[str, dict], drop_codes: set[str], generated_at: st
 
     for code, c in courses.items():
         prereq_trees = []
+        seen_roots: set[tuple[str, bool]] = set()
         for expression, description, is_negative in c["prereq_raw"]:
             if not expression:
                 continue
-            tree = strip_codes(parse_expression(expression), drop_codes)
+            tree = dedupe_tree(strip_codes(parse_expression(expression), drop_codes | {code}))
             if tree is None:
                 continue
+            root_key = (json.dumps(tree_to_json(tree), sort_keys=True), is_negative)
+            if root_key in seen_roots:
+                continue
+            seen_roots.add(root_key)
             group_id += 1
             prereq_trees.append({
                 "logic": tree_to_json(tree),
@@ -587,13 +746,15 @@ def build_graph(courses: dict[str, dict], drop_codes: set[str], generated_at: st
             "cross_listed": c["cross_listed"],
             "terms": c["terms"],
             "stub": c["stub"],
+            "merged": c["merged"],
             "prerequisites": prereq_trees,
             "sections": [
-                {"term": term, "section": section, "instructors": list(instructors),
+                {"offering_code": offering_code, "term": term, "section": section,
+                 "instructors": list(instructors),
                  "syllabus_url": syllabus_url or None, "max_seats": max_seats or None,
                  "seats_available": seats_available or None, "waitlisted": waitlisted or None,
                  "status": status or None}
-                for term, section, instructors, syllabus_url, max_seats, seats_available,
+                for offering_code, term, section, instructors, syllabus_url, max_seats, seats_available,
                     waitlisted, status in c["sections"]
             ],
         })

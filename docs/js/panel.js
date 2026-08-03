@@ -110,10 +110,18 @@ export function selectNode(n) {
       thead.appendChild(el("th", { text: h }));
     }
     table.appendChild(thead);
-    const sorted = [...currentSections].sort((a, b) => (a.section || "").localeCompare(b.section || ""));
+    const sorted = [...currentSections].sort((a, b) =>
+      (a.offering_code + a.section).localeCompare(b.offering_code + b.section));
     for (const s of sorted) {
       const row = el("tr");
-      row.appendChild(el("td", { class: "section-term", text: s.section || "" }));
+      // A merged 4xy/6xy course's sections come from two different course
+      // codes (see build_database.py's merge_grad_undergrad_pairs()) — tag
+      // each section with the short number (e.g. "420") it was scraped
+      // under so grad/undergrad sections stay distinguishable.
+      const secLabel = n.merged
+        ? `${s.offering_code.split(".").pop()}-${s.section || ""}`
+        : (s.section || "");
+      row.appendChild(el("td", { class: "section-term", text: secLabel }));
       row.appendChild(el("td", { class: "section-instructors", text: (s.instructors || []).join(", ") }));
       row.appendChild(el("td", { text: s.seats_available || "" }));
       row.appendChild(el("td", { text: s.status || "" }));
