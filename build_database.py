@@ -18,12 +18,17 @@ can usefully read.
 EN.550.* is the department's old numbering (renumbered to EN.553.* at some
 point) and is deprecated — it never appears as a scraped course, only as
 stale references inside other courses' prerequisite data (JHU's own
-records still carry the old codes in a handful of spots).
-Those references are dropped entirely rather than turned into stub nodes,
-along with any other referenced code that has no usable title at all (no
-`PrereqCoursesCatalogs` entry and never scraped directly) — a stub node
-with neither a title nor its own data isn't worth showing. See
-`is_deprecated_code()`/`strip_codes()` in `build_courses()`.
+records still carry the old codes in a handful of spots). The renumbering
+only ever swapped the department prefix, not the course number, so most
+EN.550.NNN references are remapped onto the still-live EN.553.NNN course
+of the same number rather than discarded — e.g. EN.553.720's recorded
+exclusion against "EN.550.620" really means EN.553.620 (now part of
+EN.553.420/620). Only references with no live EN.553.NNN counterpart
+(genuinely discontinued courses) are dropped entirely rather than turned
+into stub nodes, along with any other referenced code that has no usable
+title at all (no `PrereqCoursesCatalogs` entry and never scraped
+directly) — a stub node with neither a title nor its own data isn't worth
+showing. See `is_deprecated_code()`/`strip_codes()` in `build_courses()`.
 
 Two outputs are written:
 
@@ -177,10 +182,12 @@ def referenced_courses(node: dict) -> set[str]:
 
 
 def is_deprecated_code(code: str) -> bool:
-    """EN.550.* is the department's pre-renumbering code (now EN.553.*).
+    """EN.550.* is the department's pre-renumbering prefix (now EN.553.*).
     It never appears as a scraped course, only as a stale reference inside
-    other courses' prerequisite data, and is dropped everywhere rather than
-    kept as a stub node."""
+    other courses' prerequisite data. build_courses() remaps most such
+    references onto the live EN.553.NNN course of the same number (see the
+    deprecated_map step); only the remainder -- with no live EN.553.NNN
+    counterpart -- end up dropped rather than kept as a stub node."""
     return code.startswith("EN.550.")
 
 
@@ -366,6 +373,34 @@ def build_courses(term_files: list[tuple[str, list[dict]]]) -> tuple[dict[str, d
             return most_common(by_code[code]["titles"])
         return external_titles.get(code)
 
+    # EN.550.* is the department's pre-renumbering prefix (see
+    # is_deprecated_code()) -- the renumbering only ever swapped the
+    # department prefix, not the course number, so almost every EN.550.NNN
+    # reference maps 1:1 onto a still-live EN.553.NNN course (e.g. the
+    # EN.550.620[C] exclusion recorded against EN.553.720 really means
+    # EN.553.620, now merged into EN.553.420/620 -- see
+    # merge_grad_undergrad_pairs()). Remap those references onto the live
+    # code before drop_codes is computed below, rather than dropping them
+    # outright; a reference only gets dropped if no such EN.553.NNN course
+    # exists (e.g. a genuinely discontinued course).
+    deprecated_refs = set()
+    for code in real_codes:
+        for expr, _desc, _neg in by_code[code]["prereq_raw"]:
+            if expr:
+                deprecated_refs |= {c for c in referenced_courses(parse_expression(expr)) if is_deprecated_code(c)}
+    deprecated_map = {
+        old: candidate
+        for old in deprecated_refs
+        if (candidate := f"EN.553.{old.rsplit('.', 1)[1]}") in real_codes
+    }
+    if deprecated_map:
+        for code in real_codes:
+            row = by_code[code]
+            row["prereq_raw"] = [
+                (remap_expression(expr, deprecated_map) if expr else expr, desc, neg)
+                for expr, desc, neg in row["prereq_raw"]
+            ]
+
     # Only AMS courses' own prerequisite data defines which external
     # courses are worth a stub node — an external course's own prereqs
     # (e.g. EN.500.113's mutual-exclusion with other EN.500 sections)
@@ -379,10 +414,11 @@ def build_courses(term_files: list[tuple[str, list[dict]]]) -> tuple[dict[str, d
             if expr:
                 referenced |= referenced_courses(parse_expression(expr))
 
-    # Drop EN.550.* deprecated codes and any code with no usable title —
-    # nothing worth showing, and no way to tell real signal from scrape
-    # noise. This can also drop a real EN.553.* course (none currently lack
-    # a title, but the rule should hold either way).
+    # Drop whatever EN.550.* deprecated codes didn't resolve to a live
+    # course above (genuinely discontinued, e.g. EN.550.113), and any code
+    # with no usable title — nothing worth showing, and no way to tell real
+    # signal from scrape noise. This can also drop a real EN.553.* course
+    # (none currently lack a title, but the rule should hold either way).
     drop_codes = {c for c in referenced if is_deprecated_code(c)}
     drop_codes |= {c for c in referenced - drop_codes if not title_for(c)}
     drop_codes |= {code for code in real_codes if not title_for(code)}
