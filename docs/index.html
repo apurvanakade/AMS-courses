@@ -16,15 +16,15 @@
 <div class="app">
   <header>
     <h1>AMS Course Connections</h1>
-    <p>Prerequisites and exclusions across Applied Mathematics &amp; Statistics course offerings — arranged by course level.</p>
-    <span id="lastUpdated"></span>
-    <div class="spacer"></div>
-    <input type="text" id="search" placeholder="Search code, title, instructor, description…">
-    <button id="fitBtn" type="button">Fit to screen</button>
-    <button id="themeToggle" type="button">Toggle theme</button>
+    <span id="lastUpdated" class="hideable"></span>
+    <div class="spacer hideable"></div>
+    <input type="text" id="search" class="hideable" placeholder="Search code, title, instructor, description…">
+    <button id="fitBtn" class="hideable" type="button">Fit to screen</button>
+    <button id="themeToggle" class="hideable" type="button">Toggle theme</button>
+    <button id="ribbonToggle" type="button" aria-label="Hide controls" title="Hide controls">▴</button>
   </header>
 
-  <div class="filters">
+  <div class="filters hideable">
     <div class="filter-group" id="degreeLegend">
       <span class="label">Level</span>
       <label class="chip active" data-degree="Undergraduate">

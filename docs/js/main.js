@@ -6,6 +6,7 @@
 import { store, buildFromGraph } from "./store.js";
 import { initRenderer, draw } from "./render.js";
 import { initTheme } from "./theme.js";
+import { initRibbonToggle } from "./ribbon.js";
 import { initTooltip } from "./tooltip.js";
 import { initCamera, resizeCanvas } from "./camera.js";
 import { initPanel, selectNode, deselect } from "./panel.js";
@@ -21,6 +22,7 @@ const lastUpdatedEl = document.getElementById("lastUpdated");
 initRenderer(canvas);
 initTooltip(tooltip, wrap);
 initTheme(draw);
+initRibbonToggle(() => { resizeCanvas(); draw(); });
 initPanel(() => syncURL(true));
 initFilterControls();
 initCamera(canvas, wrap, clickedNode => {

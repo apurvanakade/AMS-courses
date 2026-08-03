@@ -9,7 +9,6 @@ header {
   flex-wrap: wrap;
 }
 header h1 { font-size: 16px; margin: 0; font-weight: 600; }
-header p { margin: 0; color: var(--text-secondary); font-size: 12.5px; }
 header #lastUpdated { margin: 0; color: var(--muted); font-size: 12.5px; }
 header .spacer { flex: 1; }
 #themeToggle, #fitBtn {
@@ -22,11 +21,25 @@ header #search {
   border-radius: 6px; padding: 6px 10px; font-size: 13px; width: 220px; align-self: center;
 }
 
+/* Arrow at the right edge of the header that collapses it (and the
+   filters ribbon below it) down to just the title, for decluttering the
+   view once the controls are set the way a user wants. `margin-left: auto`
+   keeps it pinned to the right edge on its own, independent of `.spacer`,
+   since `.spacer` is itself hidden while collapsed. */
+#ribbonToggle {
+  border: 1px solid var(--border-strong); background: var(--surface-1); color: var(--text-primary);
+  cursor: pointer; border-radius: 6px;
+  font-size: 15px; line-height: 1; padding: 5px 10px; margin-left: auto; align-self: center;
+}
+#ribbonToggle:hover { background: var(--gridline); }
+.app.controls-hidden #ribbonToggle { transform: rotate(180deg); }
+
 .filters {
   display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
   padding: 10px 18px; border-bottom: 1px solid var(--gridline);
   background: var(--surface-1);
 }
+.app.controls-hidden .hideable { display: none; }
 .filters select {
   background: var(--page-plane); border: 1px solid var(--border-strong); color: var(--text-primary);
   border-radius: 6px; padding: 5px 8px; font-size: 12.5px;

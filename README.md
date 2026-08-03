@@ -123,6 +123,7 @@ graph TD
     store["store.js<br/>Shared mutable app state + buildFromGraph()"]
     render["render.js<br/>draw() — the only module touching the canvas ctx"]
     theme["theme.js<br/>Reads CSS custom properties; theme-toggle button"]
+    ribbon["ribbon.js<br/>Collapse/expand toggle for header + filters ribbon"]
     tooltip["tooltip.js<br/>Hover tooltip anchored to a course node"]
     camera["camera.js<br/>Pan/zoom/resize + pointer/wheel wiring"]
     panel["panel.js<br/>Detail side panel DOM + drag-to-resize handle"]
@@ -134,6 +135,7 @@ graph TD
     main --> store
     main --> render
     main --> theme
+    main --> ribbon
     main --> tooltip
     main --> camera
     main --> panel

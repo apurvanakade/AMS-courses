@@ -170,6 +170,8 @@ so nothing needs `npm`/bundling to run — serving `docs/` over `http://`
 - `docs/js/render.js` — `draw()`, the only thing that touches the canvas
   2D context.
 - `docs/js/tooltip.js` — the hover tooltip.
+- `docs/js/ribbon.js` — the arrow toggle that collapses/expands the header
+  controls and filters ribbon down to just the title.
 - `docs/js/panel.js` — the detail side panel's DOM and its resize handle.
 - `docs/js/filters.js` — filter state, the URL query-string round-trip, and
   the filter controls' DOM wiring.
