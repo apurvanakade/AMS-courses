@@ -30,7 +30,7 @@ pip install requests
 
 ```bash
 python3 fetch_courses.py --term "Fall 2026"          # skip prompt
-python3 fetch_courses.py                              # prompts for term interactively
+python3 fetch_courses.py                              # prompts, defaulting to the current term
 python3 fetch_courses.py --term "Fall 2026" --yes      # skip overwrite confirmation
 ```
 
@@ -56,8 +56,22 @@ matching the term you queried — override with `--out-dir`:
 If either file already exists, you'll be asked to confirm before it's
 overwritten. Pass `--yes`/`-y` to skip the prompt (e.g. in scripts).
 
-Scraped terms already in the repo live under `data/`; they're committed as
-a historical record and aren't regenerated automatically.
+Scraped terms already in the repo live under `data/` and are committed as a
+historical record. The current term and the one after it are the exception:
+a scheduled job keeps those two refreshed automatically (see "Automated
+refresh" below); everything older is static and won't change unless you
+rescrape it by hand.
+
+## Automated refresh
+
+A GitHub Actions workflow (`.github/workflows/refresh-courses.yml`) runs
+`scripts/refresh_terms.py` weekly, re-scraping only the current term and
+the one right after it, rebuilding the database, and pushing any resulting
+changes. This is why a not-yet-published future term can already have a
+`data/<Year> <Season>/` folder in the repo with zero courses in it — the
+job will pick up real data automatically once JHU publishes that term.
+Run it by hand with `python3 scripts/refresh_terms.py`, or trigger the
+workflow manually from the Actions tab.
 
 ## Build the database
 

@@ -11643,7 +11643,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "880595",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "23/48",
+    "SeatsAvailable": "22/48",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -12277,7 +12277,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "880592",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "10/20",
+    "SeatsAvailable": "11/20",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -14764,7 +14764,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866993",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "3/25",
+    "SeatsAvailable": "2/25",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -29426,7 +29426,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866941",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "5/24",
+    "SeatsAvailable": "4/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",

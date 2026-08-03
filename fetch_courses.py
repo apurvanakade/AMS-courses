@@ -14,7 +14,8 @@ queries a `sections` collection directly. This script does the same thing.
 
 Usage:
     python3 fetch_courses.py --term "Fall 2026"          # skip prompt
-    python3 fetch_courses.py                              # prompts for term
+    python3 fetch_courses.py                              # prompts, defaulting to the
+                                                            # current term (blank = accept)
     python3 fetch_courses.py --term "Fall 2026" --yes      # skip overwrite confirmation
 
 No API key is required. Output is written to a "<Year> <Season>" folder
@@ -23,6 +24,7 @@ No API key is required. Output is written to a "<Year> <Season>" folder
 
 import argparse
 import csv
+import datetime
 import json
 import os
 import sys
@@ -40,6 +42,33 @@ def term_to_folder(term: str) -> str:
     """Convert an API term like "Fall 2026" into a folder name "data/2026 Fall"."""
     season, year = term.rsplit(" ", 1)
     return os.path.join(DATA_DIR, f"{year} {season}")
+
+
+def current_term() -> str:
+    """Guess the in-progress/upcoming academic term from today's date.
+
+    Mirrors computeDefaultTerm() in docs/js/course-utils.js, which the
+    visualizer uses to pick its default term filter — kept in sync so a
+    bare `fetch_courses.py` run scrapes the same term the visualizer shows
+    by default.
+    """
+    today = datetime.date.today()
+    season = "Spring" if 1 <= today.month <= 6 else "Fall"
+    return f"{season} {today.year}"
+
+
+def next_term(term: str) -> str:
+    """Return the term chronologically following the given one.
+
+    This department's data/ folder has only ever had Spring/Fall terms (no
+    Summer/Intersession), so the cycle is just Spring -> Fall (same year) ->
+    Spring (next year).
+    """
+    season, year = term.rsplit(" ", 1)
+    year = int(year)
+    if season == "Spring":
+        return f"Fall {year}"
+    return f"Spring {year + 1}"
 
 
 def get_typesense_config() -> dict:
@@ -126,15 +155,18 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--school", default="Whiting School of Engineering")
     parser.add_argument("--department", default="EN Applied Mathematics & Statistics")
-    parser.add_argument("--term", help='Academic term, e.g. "Fall 2026" (prompted if omitted)')
+    parser.add_argument("--term", help='Academic term, e.g. "Fall 2026" '
+                         "(prompted if omitted, defaulting to the current term)")
     parser.add_argument("--out-dir", help='Output folder (defaults to "<Year> <Season>")')
     parser.add_argument("--yes", "-y", action="store_true",
                          help="Overwrite existing output files without prompting")
     args = parser.parse_args()
 
-    term = args.term or input('Term (e.g. "Fall 2026"): ').strip()
-    if not term:
-        parser.error("A term is required")
+    if args.term:
+        term = args.term
+    else:
+        default = current_term()
+        term = input(f'Term (e.g. "Fall 2026") [{default}]: ').strip() or default
 
     out_dir = args.out_dir or term_to_folder(term)
     json_path = os.path.join(out_dir, "courses.json")

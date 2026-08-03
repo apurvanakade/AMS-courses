@@ -35,7 +35,7 @@ collection directly. This script does the same thing.
 pip install requests
 
 python3 fetch_courses.py --term "Fall 2026"          # skip prompt
-python3 fetch_courses.py                              # prompts for term interactively
+python3 fetch_courses.py                              # prompts, defaulting to the current term
 python3 fetch_courses.py --term "Fall 2026" --yes      # skip overwrite confirmation
 
 python3 build_database.py                              # rebuild db/courses.db + docs/graph.json from data/
@@ -51,6 +51,28 @@ No API key or registration is required.
 There is no build, lint, or test suite in this repo. `build_database.py` and
 `docs/index.html` use only the Python/JS standard library — no `npm`,
 no bundler.
+
+## Automated refresh
+
+`.github/workflows/refresh-courses.yml` runs `scripts/refresh_terms.py`
+weekly (Monday 13:00 UTC, plus `workflow_dispatch` for a manual trigger),
+committing and pushing any resulting changes under `data/` and
+`docs/graph.json` as the `github-actions[bot]` user. The script re-fetches
+only the current term and the one right after it (via
+`fetch_courses.current_term()`/`next_term()` — the same functions
+`fetch_courses.py` uses to default its own interactive prompt, so the
+script and a bare manual run never disagree on what "current" means), then
+reruns `build_database.py`. It intentionally does not touch older terms —
+those are historical record and don't change. This is what keeps the
+scraped data from going stale between manual runs, and is why a future
+term (e.g. `data/2027 Spring/`) can already exist as a real, committed
+folder with zero course records: JHU hasn't published that term's sections
+yet, and the weekly run will pick them up once it does.
+
+Note this is independent of the visualizer's default term filter
+(`computeDefaultTerm()` in `docs/js/course-utils.js`), which only ever
+resolves to the *current* term, never the next one — so scraping one term
+ahead of time doesn't change what term the visualizer opens to by default.
 
 ## Architecture
 
@@ -69,6 +91,13 @@ no bundler.
   on-disk layout `data/2026 Fall/` (year/season order flipped from the API's
   season/year order). This mapping is the one non-obvious piece of logic in
   the script — the API and the file layout use different orderings.
+- `current_term()` guesses the in-progress/upcoming term from today's date
+  (Jan–Jun → `Spring {year}`, Jul–Dec → `Fall {year}`) and is used as the
+  prompt's default when `--term` is omitted (blank input accepts it). It
+  mirrors `computeDefaultTerm()` in `docs/js/course-utils.js` so a bare
+  `fetch_courses.py` run scrapes the same term the visualizer opens to by
+  default — but the two are only kept in sync by convention, not by a
+  shared source, so update both if the rule ever changes.
 - Output per term is a pair of files in that folder: `courses.json` (the raw
   list of Typesense section documents, one per section — each includes a
   nested `SectionDetails` object with `Prerequisites`, `Restrictions`,
