@@ -78,9 +78,18 @@ for independent-study arrangements) are excluded — one-off student/faculty
 arrangements, not real courses worth showing in the graph.
 
 `EN.550.*` — the department's old numbering, from before it was renumbered
-to `EN.553.*` — and any referenced course with no title at all (no JHU
-catalog title and never scraped directly) are dropped from the database
-entirely, not just hidden as stubs.
+to `EN.553.*` — is remapped onto the still-live `EN.553.*` course of the
+same number wherever one exists, recovering edges that a straight drop
+would lose. Only references with no live counterpart (genuinely
+discontinued courses), and any referenced course with no title at all (no
+JHU catalog title and never scraped directly), are dropped from the
+database entirely, not just hidden as stubs.
+
+Many AMS courses are cross-listed as both a 4xy undergraduate number and a
+6xy graduate number for the same course; `merge_grad_undergrad_pairs()`
+combines each such pair into a single `EN.553.4xy/6xy` node so the merged
+course shows the full prerequisites JHU sometimes records under only one
+of the two numbers.
 
 Writes two outputs, both fully reproducible by re-running the script:
 

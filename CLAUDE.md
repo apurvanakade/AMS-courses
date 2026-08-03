@@ -2,6 +2,14 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Keeping docs in sync
+
+After every change to this repo, update this file and README.md if the
+change makes anything they describe stale — a new/removed/renamed file, a
+changed behavior, a changed architectural decision, or a changed import
+graph (README's "File map" Mermaid diagram in particular). Do this as part
+of the same change, not as a followup.
+
 ## What this is
 
 A scraper for JHU course listings, scoped to Applied Mathematics &
@@ -105,7 +113,13 @@ generic exclusion, the field is dropped entirely.
 `EN.550.*` is the department's old numbering, from before it was renumbered
 to `EN.553.*`; it never appears as a scraped course, only as a stale
 reference inside another course's prerequisite data (JHU's own records
-still carry the old codes in a handful of spots). Every such reference is
+still carry the old codes in a handful of spots). The renumbering only
+ever swapped the department prefix, not the course number, so most
+`EN.550.NNN` references map 1:1 onto a still-live `EN.553.NNN` course and
+are remapped onto it (via a `deprecated_map` built in `build_courses()`)
+rather than discarded — e.g. `EN.553.720`'s recorded exclusion against
+`EN.550.620` really means `EN.553.620`. Only references with no live
+`EN.553.NNN` counterpart (a handful of genuinely discontinued courses) are
 dropped completely — not even a stub node — via
 `is_deprecated_code()`/`strip_codes()` in `build_courses()`.
 
@@ -116,8 +130,8 @@ III, or a cross-listed `EN.500`/`EN.601` course pulled in via
 from JHU's own `PrereqCoursesCatalogs` metadata or its own scraped title
 when available — even if it was scraped as its own record, so it's never
 treated as a first-class AMS course. If neither source gives it a title,
-it's dropped the same way `EN.550.*` is — a stub with no title and no data
-of its own isn't worth a node.
+it's dropped the same way unresolved `EN.550.*` references are — a stub
+with no title and no data of its own isn't worth a node.
 
 500-level, 800-level, and "Independent Academic Work"-level sections (JHU's
 label for independent-study arrangements) are dropped before they're
@@ -126,6 +140,21 @@ student/faculty arrangements, not real courses, and add nodes to the graph
 with little to no navigational value. Nothing else in the scraped data
 references them as a prerequisite, so dropping them doesn't leave dangling
 stub nodes behind.
+
+Many AMS courses are cross-listed as both a 4xy undergraduate number and a
+6xy graduate number with an identical title — the same course offered at
+two levels, where JHU's own data frequently records the real
+prerequisites under only one of the two numbers and leaves the other with
+nothing but a mutual "can't take both" exclusion.
+`merge_grad_undergrad_pairs()` merges each such pair into a single node
+(`EN.553.4xy/6xy`), combining every field losslessly and remapping every
+course's prerequisite references — not just the pair's own — from the two
+old codes to the merged one. The merged node carries `is_merged`/`merged`
+(SQLite column and graph node field respectively), is visible regardless
+of the visualizer's Undergraduate/Graduate filter, and shares the 400s
+column with the handful of 400-level courses that had no matching 6xy
+cross-listing to merge with (see `levelDigit()` in
+`docs/js/course-utils.js`).
 
 Two outputs, both fully reproducible by re-running the script:
 - `db/courses.db` (SQLite, gitignored) — the queryable source of truth,
@@ -170,6 +199,9 @@ so nothing needs `npm`/bundling to run — serving `docs/` over `http://`
 - `docs/js/render.js` — `draw()`, the only thing that touches the canvas
   2D context.
 - `docs/js/tooltip.js` — the hover tooltip.
+- `docs/js/theme.js` — reads resolved CSS custom properties (`cssVar()`,
+  `isDarkMode()`) and wires the theme-toggle button, which overrides the
+  OS-level light/dark preference via `[data-theme]`.
 - `docs/js/ribbon.js` — the arrow toggle that collapses/expands the header
   controls and filters ribbon down to just the title.
 - `docs/js/panel.js` — the detail side panel's DOM and its resize handle.
