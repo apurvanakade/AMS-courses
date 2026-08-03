@@ -55,7 +55,7 @@ header #search {
 }
 .chip.active { color: var(--text-primary); border-color: currentColor; }
 .chip input { display: none; }
-.chip.legend-item { cursor: default; }
+.chip.legend-item { cursor: default; border-color: transparent; }
 .chip .swatch { width: 14px; height: 2px; border-radius: 1px; display: inline-block; background: var(--edge-ink); }
 .chip .swatch.dashed { background: none; border-top: 2px dashed var(--edge-ink); height: 0; }
 .chip .dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; flex: none; }
