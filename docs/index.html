@@ -19,15 +19,12 @@
     <p>Prerequisites and exclusions across Applied Mathematics &amp; Statistics course offerings — arranged by course level.</p>
     <span id="lastUpdated"></span>
     <div class="spacer"></div>
+    <input type="text" id="search" placeholder="Search code, title, instructor, description…">
     <button id="fitBtn" type="button">Fit to screen</button>
     <button id="themeToggle" type="button">Toggle theme</button>
   </header>
 
   <div class="filters">
-    <div class="filter-group">
-      <input type="text" id="search" placeholder="Search code, title, instructor, description…">
-    </div>
-
     <div class="filter-group" id="degreeLegend">
       <span class="label">Level</span>
       <label class="chip active" data-degree="Undergraduate">
@@ -47,13 +44,6 @@
       <select id="termFilter"></select>
     </div>
 
-    <div class="filter-group">
-      <label class="chip" id="stubChip">
-        <input type="checkbox" id="stubToggle">
-        <span>Show external prereqs</span>
-      </label>
-    </div>
-
     <div class="filter-group" id="edgeLegend">
       <span class="label">Relationships (hover a course)</span>
       <span class="chip legend-item">
@@ -68,14 +58,24 @@
 
     <div class="filter-group" id="highlightLegend">
       <span class="label">Highlights</span>
-      <span class="chip legend-item">
+      <label class="chip active" data-highlight="new">
+        <input type="checkbox" checked>
         <span class="dot" style="background:var(--node-new)"></span>
         <span>New this term</span>
-      </span>
-      <span class="chip legend-item">
+      </label>
+      <label class="chip active" data-highlight="season">
+        <input type="checkbox" checked>
         <span class="legend-shape diamond"></span>
         <span>Fall or Spring only</span>
-      </span>
+      </label>
+      <label class="chip active" data-highlight="other">
+        <input type="checkbox" checked>
+        <span>Other</span>
+      </label>
+      <label class="chip" id="stubChip">
+        <input type="checkbox" id="stubToggle">
+        <span>Show external prereqs</span>
+      </label>
     </div>
   </div>
 

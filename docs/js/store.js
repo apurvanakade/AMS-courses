@@ -29,6 +29,7 @@ export const store = {
   search: "",
   term: computeDefaultTerm(),
   degree: new Set(["Undergraduate"]),
+  highlight: new Set(["new", "season", "other"]),
   showStubs: false,
 };
 

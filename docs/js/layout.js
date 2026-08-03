@@ -9,7 +9,7 @@ import { store } from "./store.js";
 import { COLUMN_WIDTH, ROW_HEIGHT } from "./constants.js";
 import { fitToScreen } from "./camera.js";
 
-// Courses to lay out under the current term/level/external-prereqs
+// Courses to lay out under the current term/level/highlight/external-prereqs
 // filters — the same criteria applyFilters() uses to decide visibility,
 // minus the free-text search (search dims/hides within a layout rather
 // than reshuffling it on every keystroke). Mirroring applyFilters() here
@@ -20,6 +20,9 @@ export function nodesForLayout() {
     if (!store.showStubs && n.stub) return false;
     if (n.degreeLevel && !store.degree.has(n.degreeLevel)) return false;
     if (!n.stub && !n.terms.includes(store.term)) return false;
+    const isNew = n.firstTerm === store.term;
+    const category = isNew ? "new" : n.seasonOnly ? "season" : "other";
+    if (!store.highlight.has(category)) return false;
     return true;
   });
 }

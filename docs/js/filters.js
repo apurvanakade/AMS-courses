@@ -1,7 +1,7 @@
 // Filter state (search text, term, degree levels, external-prereq toggle),
 // the URL <-> state round-trip, and the DOM wiring for the filter controls.
 //
-// Level/term/external and the focused course (if any) round-trip through
+// Level/term/highlight/external and the focused course (if any) round-trip through
 // the query string, so a reload, a shared link, or the browser's
 // back/forward buttons all restore the same view. Hover and in-progress
 // search text are deliberately excluded: too transient to belong in history.
@@ -27,6 +27,7 @@ function syncURL(push) {
   if (suppressHistory) return;
   const params = new URLSearchParams();
   params.set("level", Array.from(store.degree).join(","));
+  params.set("highlight", Array.from(store.highlight).join(","));
   params.set("term", store.term);
   if (store.showStubs) params.set("external", "1");
   const focus = store.selected || store.searchFocus;
@@ -39,12 +40,19 @@ function syncURL(push) {
 function restoreFromParams(params) {
   const level = params.get("level");
   store.degree = new Set(level ? level.split(",").filter(Boolean) : ["Undergraduate"]);
+  const highlight = params.get("highlight");
+  store.highlight = new Set(highlight ? highlight.split(",").filter(Boolean) : ["new", "season", "other"]);
   const term = params.get("term");
   store.term = store.allTerms.includes(term) ? term : DEFAULT_TERM;
   store.showStubs = params.get("external") === "1";
 
   document.querySelectorAll("#degreeLegend .chip").forEach(chip => {
     const on = store.degree.has(chip.dataset.degree);
+    chip.querySelector("input").checked = on;
+    chip.classList.toggle("active", on);
+  });
+  document.querySelectorAll("#highlightLegend .chip[data-highlight]").forEach(chip => {
+    const on = store.highlight.has(chip.dataset.highlight);
     chip.querySelector("input").checked = on;
     chip.classList.toggle("active", on);
   });
@@ -74,6 +82,14 @@ function applyFilters(pushHistory) {
     // n.terms is always empty for stub/external courses (no term data of
     // their own); exempt them here too, matching nodesForLayout().
     if (visible && !n.stub && !n.terms.includes(store.term)) visible = false;
+    // Mirrors the isNew/seasonOnly precedence in render.js: a course new
+    // this term never also counts as "Fall or Spring only" (it only has
+    // one term on record so far, which isn't a pattern yet).
+    if (visible) {
+      const isNew = n.firstTerm === store.term;
+      const category = isNew ? "new" : n.seasonOnly ? "season" : "other";
+      if (!store.highlight.has(category)) visible = false;
+    }
     if (visible && q) {
       // Only instructors teaching the currently-selected term count — an
       // instructor who taught this course in some other term shouldn't
@@ -124,6 +140,16 @@ function initFilterControls() {
     const input = chip.querySelector("input");
     input.addEventListener("change", () => {
       if (input.checked) store.degree.add(degree); else store.degree.delete(degree);
+      chip.classList.toggle("active", input.checked);
+      relayout();
+      applyFilters(true);
+    });
+  });
+  document.querySelectorAll("#highlightLegend .chip[data-highlight]").forEach(chip => {
+    const highlight = chip.dataset.highlight;
+    const input = chip.querySelector("input");
+    input.addEventListener("change", () => {
+      if (input.checked) store.highlight.add(highlight); else store.highlight.delete(highlight);
       chip.classList.toggle("active", input.checked);
       relayout();
       applyFilters(true);
