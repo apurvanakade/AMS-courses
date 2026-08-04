@@ -53,7 +53,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867692",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "26/60",
+    "SeatsAvailable": "25/60",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -9196,7 +9196,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867606",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "3/24",
+    "SeatsAvailable": "2/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -9771,7 +9771,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "886529",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "16/24",
+    "SeatsAvailable": "15/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -9908,7 +9908,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "880789",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "6/19",
+    "SeatsAvailable": "5/19",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -10350,7 +10350,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867078",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "0/49",
+    "SeatsAvailable": "1/49",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -10782,7 +10782,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867649",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "8/25",
+    "SeatsAvailable": "7/25",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -11269,7 +11269,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Generative AI and Agentic Systems for Clinical Data Science and Biopharmaceutical Statistics",
     "UGradPHStudies": "No",
-    "Waitlisted": "19",
+    "Waitlisted": "18",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "880822"
@@ -11335,7 +11335,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867076",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "12/39",
+    "SeatsAvailable": "13/39",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -11643,7 +11643,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "880595",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "22/48",
+    "SeatsAvailable": "19/48",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -12450,7 +12450,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867573",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "4/10",
+    "SeatsAvailable": "3/10",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -13064,7 +13064,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867069",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "5/42",
+    "SeatsAvailable": "4/42",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -38584,7 +38584,7 @@
     "TimeOfDay": "Morning",
     "Title": "Gateway Computing: Python",
     "UGradPHStudies": "No",
-    "Waitlisted": "1",
+    "Waitlisted": "2",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "865871"
@@ -38996,7 +38996,7 @@
     "TimeOfDay": "Morning",
     "Title": "Gateway Computing: Python",
     "UGradPHStudies": "No",
-    "Waitlisted": "7",
+    "Waitlisted": "8",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "865869"
