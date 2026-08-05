@@ -17,6 +17,8 @@ const DEFAULT_TERM = computeDefaultTerm();
 
 const statusEl = document.getElementById("status");
 const searchInput = document.getElementById("search");
+const searchWrap = document.querySelector(".search-wrap");
+const searchClear = document.getElementById("searchClear");
 const termSelect = document.getElementById("termFilter");
 const stubToggle = document.getElementById("stubToggle");
 const stubChip = document.getElementById("stubChip");
@@ -129,7 +131,18 @@ function applyFilters(pushHistory) {
 }
 
 function initFilterControls() {
-  searchInput.addEventListener("input", e => { store.search = e.target.value; applyFilters(false); });
+  searchInput.addEventListener("input", e => {
+    store.search = e.target.value;
+    searchWrap.classList.toggle("has-text", store.search.length > 0);
+    applyFilters(false);
+  });
+  searchClear.addEventListener("click", () => {
+    searchInput.value = "";
+    store.search = "";
+    searchWrap.classList.remove("has-text");
+    applyFilters(false);
+    searchInput.focus();
+  });
   termSelect.addEventListener("change", e => {
     store.term = e.target.value;
     relayout();

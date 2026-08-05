@@ -16,10 +16,20 @@ header .spacer { flex: 1; }
   border-radius: 6px; padding: 5px 10px; font-size: 12.5px; cursor: pointer;
 }
 #themeToggle:hover, #fitBtn:hover { background: var(--gridline); }
+.search-wrap {
+  position: relative; flex: 1 1 auto; min-width: 220px; max-width: 520px; align-self: center;
+}
 header #search {
   background: var(--page-plane); border: 1px solid var(--border-strong); color: var(--text-primary);
-  border-radius: 6px; padding: 6px 10px; font-size: 13px; width: 220px; align-self: center;
+  border-radius: 6px; padding: 6px 28px 6px 10px; font-size: 13px; width: 100%; box-sizing: border-box;
 }
+#searchClear {
+  display: none; position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+  border: none; background: none; color: var(--muted); cursor: pointer;
+  font-size: 16px; line-height: 1; padding: 4px 6px; border-radius: 50%;
+}
+#searchClear:hover { background: var(--gridline); color: var(--text-primary); }
+.search-wrap.has-text #searchClear { display: block; }
 
 /* Arrow at the right edge of the header that collapses it (and the
    filters ribbon below it) down to just the title, for decluttering the
