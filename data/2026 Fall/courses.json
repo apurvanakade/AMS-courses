@@ -5628,7 +5628,7 @@
     "Repeatable": "Y",
     "SSS_SectionsID": "867252",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "9/10",
+    "SeatsAvailable": "8/10",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -8532,7 +8532,7 @@
     "Repeatable": "Y",
     "SSS_SectionsID": "867230",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "9/10",
+    "SeatsAvailable": "8/10",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -9771,7 +9771,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "886529",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "16/24",
+    "SeatsAvailable": "15/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -10440,7 +10440,7 @@
     "TimeOfDay": "Morning",
     "Title": "Nonlinear Optimization I",
     "UGradPHStudies": "No",
-    "Waitlisted": "10",
+    "Waitlisted": "9",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "867078"
@@ -10996,7 +10996,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Machine Learning I",
     "UGradPHStudies": "No",
-    "Waitlisted": "17",
+    "Waitlisted": "16",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "867084"
@@ -11055,7 +11055,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "880924",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "1/30",
+    "SeatsAvailable": "0/30",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -11132,7 +11132,7 @@
     "TimeOfDay": "Other",
     "Title": "Large Language Models: Foundations and Algorithms",
     "UGradPHStudies": "No",
-    "Waitlisted": "20",
+    "Waitlisted": "21",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "880924"
@@ -11335,7 +11335,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867076",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "12/39",
+    "SeatsAvailable": "13/39",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -11643,7 +11643,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "880595",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "21/48",
+    "SeatsAvailable": "19/48",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -12594,7 +12594,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867070",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "38/90",
+    "SeatsAvailable": "37/90",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -14030,7 +14030,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Risk Measurement/Management in Financial Markets",
     "UGradPHStudies": "No",
-    "Waitlisted": "5",
+    "Waitlisted": "6",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "867000"
@@ -14266,7 +14266,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866997",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "3/30",
+    "SeatsAvailable": "2/30",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -14614,7 +14614,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867675",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "10/24",
+    "SeatsAvailable": "9/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -15098,7 +15098,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "880587",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "4/15",
+    "SeatsAvailable": "5/15",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -15409,7 +15409,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866989",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "17/24",
+    "SeatsAvailable": "16/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -16061,7 +16061,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866985",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "1/24",
+    "SeatsAvailable": "3/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -16910,7 +16910,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867006",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "5/30",
+    "SeatsAvailable": "4/30",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -17590,7 +17590,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866976",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "6/24",
+    "SeatsAvailable": "5/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -18475,7 +18475,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866970",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "20/28",
+    "SeatsAvailable": "18/28",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -21317,38 +21317,6 @@
       ],
       "PrereqCoursesCatalogs": [
         {
-          "Description": "Introduction to the mathematics of finite systems. Logic; Boolean algebra; induction and recursion; sets, functions, relations, equivalence, and partially ordered sets; elementary combinatorics; modular arithmetic and the Euclidean algorithm; group theory; permutations and symmetry groups; graph theory. Selected applications. The concept of a proof and development of the ability to recognize and construct proofs are part of the course. Recommended Course Background: Four years of high school mathematics.",
-          "Name": "EN.553.171",
-          "SssCoursesId": 39339,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Discrete Mathematics"
-        },
-        {
-          "Description": "An introduction to combinatorial analysis at the graduate level. Meets concurrently with 553.471. Counting techniques: generating functions, recurrence relations, Polya\u2019s theorem. Combinatorial designs: Latin squares, finite geometries, balanced incomplete block designs. Emphasis on problem solving. Recommended Course Background: EN.553.291 or AS.110.201",
-          "Name": "EN.553.671",
-          "SssCoursesId": 39789,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Combinatorial Analysis"
-        },
-        {
-          "Description": "Study of systems of \u201cvertices\u201d with some pairs joined by \u201cedges.\u201d Theory of adjacency, connectivity, traversability, feedback, and other concepts underlying properties important in engineering and the sciences. Topics include paths, cycles, and trees; routing problems associated with Euler and Hamilton; design of graphs realizing specified incidence conditions and other constraints. Attention directed toward problem solving, algorithms, and applications. One or more topics taken up in greater depth. Recommended Course Background: (EN.553.291 OR AS.110.201 OR AS.110.212)",
-          "Name": "EN.553.672",
-          "SssCoursesId": 39627,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Graph Theory"
-        },
-        {
-          "Description": "Study of systems of \u201cvertices\u201d with some pairs joined by \u201cedges.\u201d Theory of adjacency, connectivity, traversability, feedback, and other concepts underlying properties important in engineering and the sciences. Topics include paths, cycles, and trees; routing problems associated with Euler and Hamilton; design of graphs realizing specified incidence conditions and other constraints. Attention directed toward problem solving, algorithms, and applications. One or more topics taken up in greater depth.",
-          "Name": "EN.553.472",
-          "SssCoursesId": 39616,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Graph Theory"
-        },
-        {
           "Description": "An introduction to combinatorial analysis at the graduate level. Meets concurrently with 553.471. Counting techniques: generating functions, recurrence relations, Polya\u2019s theorem. Combinatorial designs: Latin squares, finite geometries, balanced incomplete block designs. Emphasis on problem solving. Recommended Course Background: EN.553.291 or AS.110.201",
           "Name": "EN.553.671",
           "SssCoursesId": 39789,
@@ -21403,6 +21371,38 @@
           "StatusName": "Active",
           "TermName": "AE Fall 2026",
           "Title": "Linear Algebra for Data Science"
+        },
+        {
+          "Description": "Introduction to the mathematics of finite systems. Logic; Boolean algebra; induction and recursion; sets, functions, relations, equivalence, and partially ordered sets; elementary combinatorics; modular arithmetic and the Euclidean algorithm; group theory; permutations and symmetry groups; graph theory. Selected applications. The concept of a proof and development of the ability to recognize and construct proofs are part of the course. Recommended Course Background: Four years of high school mathematics.",
+          "Name": "EN.553.171",
+          "SssCoursesId": 39339,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Discrete Mathematics"
+        },
+        {
+          "Description": "An introduction to combinatorial analysis at the graduate level. Meets concurrently with 553.471. Counting techniques: generating functions, recurrence relations, Polya\u2019s theorem. Combinatorial designs: Latin squares, finite geometries, balanced incomplete block designs. Emphasis on problem solving. Recommended Course Background: EN.553.291 or AS.110.201",
+          "Name": "EN.553.671",
+          "SssCoursesId": 39789,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Combinatorial Analysis"
+        },
+        {
+          "Description": "Study of systems of \u201cvertices\u201d with some pairs joined by \u201cedges.\u201d Theory of adjacency, connectivity, traversability, feedback, and other concepts underlying properties important in engineering and the sciences. Topics include paths, cycles, and trees; routing problems associated with Euler and Hamilton; design of graphs realizing specified incidence conditions and other constraints. Attention directed toward problem solving, algorithms, and applications. One or more topics taken up in greater depth. Recommended Course Background: (EN.553.291 OR AS.110.201 OR AS.110.212)",
+          "Name": "EN.553.672",
+          "SssCoursesId": 39627,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Graph Theory"
+        },
+        {
+          "Description": "Study of systems of \u201cvertices\u201d with some pairs joined by \u201cedges.\u201d Theory of adjacency, connectivity, traversability, feedback, and other concepts underlying properties important in engineering and the sciences. Topics include paths, cycles, and trees; routing problems associated with Euler and Hamilton; design of graphs realizing specified incidence conditions and other constraints. Attention directed toward problem solving, algorithms, and applications. One or more topics taken up in greater depth.",
+          "Name": "EN.553.472",
+          "SssCoursesId": 39616,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Graph Theory"
         }
       ],
       "Prerequisites": [
@@ -24452,6 +24452,38 @@
       ],
       "PrereqCoursesCatalogs": [
         {
+          "Description": "Vector spaces, matrices, and linear transformations. Solutions of systems of linear equations. Eigenvalues, eigenvectors, and diagonalization of matrices. Applications to differential equations.",
+          "Name": "AS.110.201",
+          "SssCoursesId": 3084,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Linear Algebra"
+        },
+        {
+          "Description": "This course includes the material in AS.110.201 with additional applications and theory, and is recommended only for mathematically able students majoring in physical science, engineering, or mathematics who are interested in a proof-based version of linear algebra. This course can serve as an Introduction to Proofs (IP) course.  \nPrerequisites: Grade of B+ or better in 110.107 or 110.109 or 110.113, or a 5 on the AP BC exam. \nArea: Quantitative and Mathematical Sciences.",
+          "Name": "AS.110.212",
+          "SssCoursesId": 3092,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Honors Linear Algebra"
+        },
+        {
+          "Description": "An introduction to the basic concepts of linear algebra, matrix theory, and differential equations that are used widely in modern engineering and science. Students who earn credit for EN.553.291 Linear Algebra and Differential Equations may also earn credit for AS.110.302 Differential Equations and Applications, if taken in that order. However, for the Applied Mathematics and Statistics major, AS.110.302 Differential Equations and Applications will not count towards the differential equations major requirement if EN.553.291 Linear Algebra and Differential Equations was already completed. Students who earn credit for AS.110.302 Differential Equations and Applications may not later also earn credit for EN.553.291 Linear Algebra and Differential Equations.",
+          "Name": "EN.553.291",
+          "SssCoursesId": 39341,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Linear Algebra and Differential Equations"
+        },
+        {
+          "Description": "A thorough introduction to linear algebra, with a focus on applications to data science and statistics. Topics include linear algebra in Euclidean spaces: matrices, vectors, linear independence, determinants, subspaces, bases, change of coordinates, linear transformations, null spaces and ranges, projections, orthogonalization, eigenvalues and eigenvectors; as well as least-squares approximation, spectral decomposition, quadratic forms, convexity, principal component analysis, dimensionality reduction, and approximation in function spaces. Matlab will be used for computation and applications. Prerequisites: AS.110.107 OR AS.110.109 OR AS.110.113",
+          "Name": "EN.553.295",
+          "SssCoursesId": 45282,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Linear Algebra for Data Science"
+        },
+        {
           "Description": "Introduction to the basic principles of mathematical statistics and data analysis. Emphasis on techniques of application. Classical parametric estimation, hypothesis testing, and multiple decision problems; linear models, analysis of variance, and regression; nonparametric and robust procedures; decision-theoretic setting, Bayesian methods. Recommended Course Background: EN.553.620 AND ( AS.110.201 OR AS.110.212 OR EN.553.291 ).",
           "Name": "EN.553.630",
           "SssCoursesId": 39383,
@@ -24490,38 +24522,6 @@
           "StatusName": "Active",
           "TermName": "AE Fall 2026",
           "Title": "Honors Probability"
-        },
-        {
-          "Description": "Vector spaces, matrices, and linear transformations. Solutions of systems of linear equations. Eigenvalues, eigenvectors, and diagonalization of matrices. Applications to differential equations.",
-          "Name": "AS.110.201",
-          "SssCoursesId": 3084,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Linear Algebra"
-        },
-        {
-          "Description": "This course includes the material in AS.110.201 with additional applications and theory, and is recommended only for mathematically able students majoring in physical science, engineering, or mathematics who are interested in a proof-based version of linear algebra. This course can serve as an Introduction to Proofs (IP) course.  \nPrerequisites: Grade of B+ or better in 110.107 or 110.109 or 110.113, or a 5 on the AP BC exam. \nArea: Quantitative and Mathematical Sciences.",
-          "Name": "AS.110.212",
-          "SssCoursesId": 3092,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Honors Linear Algebra"
-        },
-        {
-          "Description": "An introduction to the basic concepts of linear algebra, matrix theory, and differential equations that are used widely in modern engineering and science. Students who earn credit for EN.553.291 Linear Algebra and Differential Equations may also earn credit for AS.110.302 Differential Equations and Applications, if taken in that order. However, for the Applied Mathematics and Statistics major, AS.110.302 Differential Equations and Applications will not count towards the differential equations major requirement if EN.553.291 Linear Algebra and Differential Equations was already completed. Students who earn credit for AS.110.302 Differential Equations and Applications may not later also earn credit for EN.553.291 Linear Algebra and Differential Equations.",
-          "Name": "EN.553.291",
-          "SssCoursesId": 39341,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Linear Algebra and Differential Equations"
-        },
-        {
-          "Description": "A thorough introduction to linear algebra, with a focus on applications to data science and statistics. Topics include linear algebra in Euclidean spaces: matrices, vectors, linear independence, determinants, subspaces, bases, change of coordinates, linear transformations, null spaces and ranges, projections, orthogonalization, eigenvalues and eigenvectors; as well as least-squares approximation, spectral decomposition, quadratic forms, convexity, principal component analysis, dimensionality reduction, and approximation in function spaces. Matlab will be used for computation and applications. Prerequisites: AS.110.107 OR AS.110.109 OR AS.110.113",
-          "Name": "EN.553.295",
-          "SssCoursesId": 45282,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Linear Algebra for Data Science"
         }
       ],
       "Prerequisites": [
@@ -25781,7 +25781,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866954",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "16/24",
+    "SeatsAvailable": "17/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -31238,7 +31238,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866934",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "11/24",
+    "SeatsAvailable": "10/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -31706,7 +31706,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866932",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "13/24",
+    "SeatsAvailable": "12/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -33745,7 +33745,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867008",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "0/24",
+    "SeatsAvailable": "1/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -36730,7 +36730,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Gateway Computing: Python",
     "UGradPHStudies": "No",
-    "Waitlisted": "13",
+    "Waitlisted": "12",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "880580"
@@ -37554,7 +37554,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Gateway Computing: Python",
     "UGradPHStudies": "No",
-    "Waitlisted": "1",
+    "Waitlisted": "0",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "865876"
