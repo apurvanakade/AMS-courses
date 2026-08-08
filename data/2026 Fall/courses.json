@@ -9771,7 +9771,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "886529",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "15/24",
+    "SeatsAvailable": "14/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -9908,7 +9908,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "880789",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "5/19",
+    "SeatsAvailable": "4/19",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -10637,7 +10637,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867083",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "16/25",
+    "SeatsAvailable": "15/25",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -10782,7 +10782,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867649",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "7/25",
+    "SeatsAvailable": "6/25",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -11269,7 +11269,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Generative AI and Agentic Systems for Clinical Data Science and Biopharmaceutical Statistics",
     "UGradPHStudies": "No",
-    "Waitlisted": "18",
+    "Waitlisted": "20",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "880822"
@@ -11495,7 +11495,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867650",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "14/25",
+    "SeatsAvailable": "13/25",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -11643,7 +11643,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "880595",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "19/48",
+    "SeatsAvailable": "18/48",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -12876,11 +12876,11 @@
     "InstructionMethodFilter": [
       "In-person"
     ],
-    "Instructors": "B. Fiedorowicz",
+    "Instructors": "D. Fishkind",
     "InstructorsDelimited": [
-      "Fiedorowicz, Barbara Anna"
+      "Fishkind, Donniell"
     ],
-    "InstructorsFullName": "Fiedorowicz, Barbara Anna",
+    "InstructorsFullName": "Fishkind, Donniell",
     "IsIndependentStudy": "Exclude Independent Study",
     "IsWritingIntensive": "Non-Writing Intensive",
     "Level": "Graduate",
@@ -12921,7 +12921,7 @@
       "InstructionMethods": "In-person",
       "Instructors": [
         {
-          "HopkinsID": "F932E6|F932E6"
+          "HopkinsID": "IBLDKD|IBLDKD"
         }
       ],
       "Meetings": [
@@ -13064,7 +13064,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867069",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "4/42",
+    "SeatsAvailable": "3/42",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -13228,7 +13228,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867073",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "5/30",
+    "SeatsAvailable": "6/30",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -15026,7 +15026,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Time Series Analysis",
     "UGradPHStudies": "No",
-    "Waitlisted": "8",
+    "Waitlisted": "9",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "867663"
@@ -15246,7 +15246,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866990",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "7/24",
+    "SeatsAvailable": "6/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -17590,7 +17590,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866976",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "5/24",
+    "SeatsAvailable": "4/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -18475,7 +18475,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866970",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "18/28",
+    "SeatsAvailable": "17/28",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -21238,11 +21238,11 @@
     "InstructionMethodFilter": [
       "In-person"
     ],
-    "Instructors": "B. Fiedorowicz",
+    "Instructors": "D. Fishkind",
     "InstructorsDelimited": [
-      "Fiedorowicz, Barbara Anna"
+      "Fishkind, Donniell"
     ],
-    "InstructorsFullName": "Fiedorowicz, Barbara Anna",
+    "InstructorsFullName": "Fishkind, Donniell",
     "IsIndependentStudy": "Exclude Independent Study",
     "IsWritingIntensive": "Non-Writing Intensive",
     "Level": "Upper Level Undergraduate",
@@ -21291,7 +21291,7 @@
       "InstructionMethods": "In-person",
       "Instructors": [
         {
-          "HopkinsID": "F932E6|F932E6"
+          "HopkinsID": "IBLDKD|IBLDKD"
         }
       ],
       "Meetings": [
@@ -26079,7 +26079,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866953",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "10/24",
+    "SeatsAvailable": "9/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -26986,9 +26986,11 @@
     },
     "InstructionMethod": "In-Person",
     "InstructionMethodFilter": [],
-    "Instructors": "Staff",
-    "InstructorsDelimited": [],
-    "InstructorsFullName": "Staff",
+    "Instructors": "D. Link-Farajali",
+    "InstructorsDelimited": [
+      "Link-Farajali, Denise"
+    ],
+    "InstructorsFullName": "Link-Farajali, Denise",
     "IsIndependentStudy": "Exclude Independent Study",
     "IsWritingIntensive": "Non-Writing Intensive",
     "Level": "Upper Level Undergraduate",
@@ -27028,7 +27030,7 @@
       "InstructionMethods": "In-Person",
       "Instructors": [
         {
-          "HopkinsID": "TA4601TO"
+          "HopkinsID": "MUWNSI"
         }
       ],
       "Meetings": [
@@ -27658,7 +27660,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866948",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "2/24",
+    "SeatsAvailable": "1/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -28450,7 +28452,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866945",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "3/24",
+    "SeatsAvailable": "4/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -31441,11 +31443,11 @@
     "InstructionMethodFilter": [
       "In-person"
     ],
-    "Instructors": "T. Yoon",
+    "Instructors": "M. Micheli",
     "InstructorsDelimited": [
-      "Yoon, TaeHo"
+      "Micheli, Mario"
     ],
-    "InstructorsFullName": "Yoon, TaeHo",
+    "InstructorsFullName": "Micheli, Mario",
     "IsIndependentStudy": "Exclude Independent Study",
     "IsWritingIntensive": "Non-Writing Intensive",
     "Level": "Lower Level Undergraduate",
@@ -31488,7 +31490,7 @@
       "InstructionMethods": "In-person",
       "Instructors": [
         {
-          "HopkinsID": "9CF1A8|9CF1A8"
+          "HopkinsID": "A77633|A77633"
         }
       ],
       "Meetings": [
@@ -31675,11 +31677,11 @@
     "InstructionMethodFilter": [
       "In-person"
     ],
-    "Instructors": "T. Yoon",
+    "Instructors": "M. Micheli",
     "InstructorsDelimited": [
-      "Yoon, TaeHo"
+      "Micheli, Mario"
     ],
-    "InstructorsFullName": "Yoon, TaeHo",
+    "InstructorsFullName": "Micheli, Mario",
     "IsIndependentStudy": "Exclude Independent Study",
     "IsWritingIntensive": "Non-Writing Intensive",
     "Level": "Lower Level Undergraduate",
@@ -31706,7 +31708,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866932",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "12/24",
+    "SeatsAvailable": "13/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -31722,7 +31724,7 @@
       "InstructionMethods": "In-person",
       "Instructors": [
         {
-          "HopkinsID": "9CF1A8|9CF1A8"
+          "HopkinsID": "A77633|A77633"
         }
       ],
       "Meetings": [
@@ -31909,11 +31911,11 @@
     "InstructionMethodFilter": [
       "In-person"
     ],
-    "Instructors": "T. Yoon",
+    "Instructors": "M. Micheli",
     "InstructorsDelimited": [
-      "Yoon, TaeHo"
+      "Micheli, Mario"
     ],
-    "InstructorsFullName": "Yoon, TaeHo",
+    "InstructorsFullName": "Micheli, Mario",
     "IsIndependentStudy": "Exclude Independent Study",
     "IsWritingIntensive": "Non-Writing Intensive",
     "Level": "Lower Level Undergraduate",
@@ -31956,7 +31958,7 @@
       "InstructionMethods": "In-person",
       "Instructors": [
         {
-          "HopkinsID": "9CF1A8|9CF1A8"
+          "HopkinsID": "A77633|A77633"
         }
       ],
       "Meetings": [
@@ -32429,7 +32431,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867013",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "0/24",
+    "SeatsAvailable": "1/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -32605,7 +32607,7 @@
     "SectionRegRestrictions": "",
     "SelfSearch": "Y",
     "StartTime": 900,
-    "Status": "Waitlist Only",
+    "Status": "Open",
     "SubDepartment": "",
     "Syllabus_Url": "https://assessment.jhu.edu/index.cfm/page/AefisCourseSection.publicSyllabus?courseSectionId=123248",
     "Term": "Fall 2026",
@@ -32691,7 +32693,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867012",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "2/24",
+    "SeatsAvailable": "3/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -33405,7 +33407,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Probability and Statistics for the Life Sciences",
     "UGradPHStudies": "No",
-    "Waitlisted": "1",
+    "Waitlisted": "0",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "867010"
@@ -33933,7 +33935,7 @@
     "TimeOfDay": "Other",
     "Title": "Probability and Statistics for the Life Sciences",
     "UGradPHStudies": "No",
-    "Waitlisted": "3",
+    "Waitlisted": "2",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "867008"
@@ -34623,7 +34625,7 @@
     "TimeOfDay": "Other",
     "Title": "Honors Discrete Mathematics",
     "UGradPHStudies": "No",
-    "Waitlisted": "1",
+    "Waitlisted": "2",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "867002"
@@ -35175,9 +35177,11 @@
     "InstructionMethodFilter": [
       "In-person"
     ],
-    "Instructors": "Staff",
-    "InstructorsDelimited": [],
-    "InstructorsFullName": "Staff",
+    "Instructors": "B. Fiedorowicz",
+    "InstructorsDelimited": [
+      "Fiedorowicz, Barbara Anna"
+    ],
+    "InstructorsFullName": "Fiedorowicz, Barbara Anna",
     "IsIndependentStudy": "Exclude Independent Study",
     "IsWritingIntensive": "Non-Writing Intensive",
     "Level": "Lower Level Undergraduate",
@@ -35202,7 +35206,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866923",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "4/18",
+    "SeatsAvailable": "3/18",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -35218,7 +35222,7 @@
       "InstructionMethods": "In-person",
       "Instructors": [
         {
-          "HopkinsID": "TA4601TO|TA4601TO"
+          "HopkinsID": "F932E6|F932E6"
         }
       ],
       "Meetings": [
@@ -35394,9 +35398,11 @@
     "InstructionMethodFilter": [
       "In-person"
     ],
-    "Instructors": "Staff",
-    "InstructorsDelimited": [],
-    "InstructorsFullName": "Staff",
+    "Instructors": "B. Fiedorowicz",
+    "InstructorsDelimited": [
+      "Fiedorowicz, Barbara Anna"
+    ],
+    "InstructorsFullName": "Fiedorowicz, Barbara Anna",
     "IsIndependentStudy": "Exclude Independent Study",
     "IsWritingIntensive": "Non-Writing Intensive",
     "Level": "Lower Level Undergraduate",
@@ -35437,7 +35443,7 @@
       "InstructionMethods": "In-person",
       "Instructors": [
         {
-          "HopkinsID": "TA4601TO|TA4601TO"
+          "HopkinsID": "F932E6|F932E6"
         }
       ],
       "Meetings": [
@@ -36195,7 +36201,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "892980",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "0/19",
+    "SeatsAvailable": "1/19",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -36318,7 +36324,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Gateway Computing: Python",
     "UGradPHStudies": "No",
-    "Waitlisted": "1",
+    "Waitlisted": "3",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "892980"
@@ -37225,7 +37231,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "865877",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "2/19",
+    "SeatsAvailable": "0/19",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -37336,7 +37342,7 @@
     "SectionRegRestrictions": "",
     "SelfSearch": "Y",
     "StartTime": 1200,
-    "Status": "Open",
+    "Status": "Waitlist Only",
     "SubDepartment": "",
     "Syllabus_Url": "https://assessment.jhu.edu/index.cfm/page/AefisCourseSection.publicSyllabus?courseSectionId=122190",
     "Term": "Fall 2026",
@@ -37966,7 +37972,7 @@
     "TimeOfDay": "Morning",
     "Title": "Gateway Computing: Python",
     "UGradPHStudies": "No",
-    "Waitlisted": "1",
+    "Waitlisted": "2",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "865874"
@@ -38172,7 +38178,7 @@
     "TimeOfDay": "Morning",
     "Title": "Gateway Computing: Python",
     "UGradPHStudies": "No",
-    "Waitlisted": "3",
+    "Waitlisted": "2",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "865873"
@@ -38378,7 +38384,7 @@
     "TimeOfDay": "Morning",
     "Title": "Gateway Computing: Python",
     "UGradPHStudies": "No",
-    "Waitlisted": "2",
+    "Waitlisted": "1",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "865872"
@@ -38790,7 +38796,7 @@
     "TimeOfDay": "Morning",
     "Title": "Gateway Computing: Python",
     "UGradPHStudies": "No",
-    "Waitlisted": "8",
+    "Waitlisted": "7",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "865870"
@@ -38873,7 +38879,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "865869",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "0/19",
+    "SeatsAvailable": "2/19",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
