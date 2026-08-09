@@ -9908,7 +9908,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "880789",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "4/19",
+    "SeatsAvailable": "3/19",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -10996,7 +10996,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Machine Learning I",
     "UGradPHStudies": "No",
-    "Waitlisted": "16",
+    "Waitlisted": "15",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "867084"
@@ -11192,7 +11192,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "880822",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "0/24",
+    "SeatsAvailable": "1/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -14614,7 +14614,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867675",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "9/24",
+    "SeatsAvailable": "10/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -15409,7 +15409,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866989",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "16/24",
+    "SeatsAvailable": "15/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -16910,7 +16910,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867006",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "4/30",
+    "SeatsAvailable": "3/30",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -17590,7 +17590,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866976",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "4/24",
+    "SeatsAvailable": "3/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -22444,7 +22444,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Time Series Analysis",
     "UGradPHStudies": "No",
-    "Waitlisted": "8",
+    "Waitlisted": "9",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "867662"
@@ -24452,38 +24452,6 @@
       ],
       "PrereqCoursesCatalogs": [
         {
-          "Description": "Vector spaces, matrices, and linear transformations. Solutions of systems of linear equations. Eigenvalues, eigenvectors, and diagonalization of matrices. Applications to differential equations.",
-          "Name": "AS.110.201",
-          "SssCoursesId": 3084,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Linear Algebra"
-        },
-        {
-          "Description": "This course includes the material in AS.110.201 with additional applications and theory, and is recommended only for mathematically able students majoring in physical science, engineering, or mathematics who are interested in a proof-based version of linear algebra. This course can serve as an Introduction to Proofs (IP) course.  \nPrerequisites: Grade of B+ or better in 110.107 or 110.109 or 110.113, or a 5 on the AP BC exam. \nArea: Quantitative and Mathematical Sciences.",
-          "Name": "AS.110.212",
-          "SssCoursesId": 3092,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Honors Linear Algebra"
-        },
-        {
-          "Description": "An introduction to the basic concepts of linear algebra, matrix theory, and differential equations that are used widely in modern engineering and science. Students who earn credit for EN.553.291 Linear Algebra and Differential Equations may also earn credit for AS.110.302 Differential Equations and Applications, if taken in that order. However, for the Applied Mathematics and Statistics major, AS.110.302 Differential Equations and Applications will not count towards the differential equations major requirement if EN.553.291 Linear Algebra and Differential Equations was already completed. Students who earn credit for AS.110.302 Differential Equations and Applications may not later also earn credit for EN.553.291 Linear Algebra and Differential Equations.",
-          "Name": "EN.553.291",
-          "SssCoursesId": 39341,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Linear Algebra and Differential Equations"
-        },
-        {
-          "Description": "A thorough introduction to linear algebra, with a focus on applications to data science and statistics. Topics include linear algebra in Euclidean spaces: matrices, vectors, linear independence, determinants, subspaces, bases, change of coordinates, linear transformations, null spaces and ranges, projections, orthogonalization, eigenvalues and eigenvectors; as well as least-squares approximation, spectral decomposition, quadratic forms, convexity, principal component analysis, dimensionality reduction, and approximation in function spaces. Matlab will be used for computation and applications. Prerequisites: AS.110.107 OR AS.110.109 OR AS.110.113",
-          "Name": "EN.553.295",
-          "SssCoursesId": 45282,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Linear Algebra for Data Science"
-        },
-        {
           "Description": "Introduction to the basic principles of mathematical statistics and data analysis. Emphasis on techniques of application. Classical parametric estimation, hypothesis testing, and multiple decision problems; linear models, analysis of variance, and regression; nonparametric and robust procedures; decision-theoretic setting, Bayesian methods. Recommended Course Background: EN.553.620 AND ( AS.110.201 OR AS.110.212 OR EN.553.291 ).",
           "Name": "EN.553.630",
           "SssCoursesId": 39383,
@@ -24522,6 +24490,38 @@
           "StatusName": "Active",
           "TermName": "AE Fall 2026",
           "Title": "Honors Probability"
+        },
+        {
+          "Description": "Vector spaces, matrices, and linear transformations. Solutions of systems of linear equations. Eigenvalues, eigenvectors, and diagonalization of matrices. Applications to differential equations.",
+          "Name": "AS.110.201",
+          "SssCoursesId": 3084,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Linear Algebra"
+        },
+        {
+          "Description": "This course includes the material in AS.110.201 with additional applications and theory, and is recommended only for mathematically able students majoring in physical science, engineering, or mathematics who are interested in a proof-based version of linear algebra. This course can serve as an Introduction to Proofs (IP) course.  \nPrerequisites: Grade of B+ or better in 110.107 or 110.109 or 110.113, or a 5 on the AP BC exam. \nArea: Quantitative and Mathematical Sciences.",
+          "Name": "AS.110.212",
+          "SssCoursesId": 3092,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Honors Linear Algebra"
+        },
+        {
+          "Description": "An introduction to the basic concepts of linear algebra, matrix theory, and differential equations that are used widely in modern engineering and science. Students who earn credit for EN.553.291 Linear Algebra and Differential Equations may also earn credit for AS.110.302 Differential Equations and Applications, if taken in that order. However, for the Applied Mathematics and Statistics major, AS.110.302 Differential Equations and Applications will not count towards the differential equations major requirement if EN.553.291 Linear Algebra and Differential Equations was already completed. Students who earn credit for AS.110.302 Differential Equations and Applications may not later also earn credit for EN.553.291 Linear Algebra and Differential Equations.",
+          "Name": "EN.553.291",
+          "SssCoursesId": 39341,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Linear Algebra and Differential Equations"
+        },
+        {
+          "Description": "A thorough introduction to linear algebra, with a focus on applications to data science and statistics. Topics include linear algebra in Euclidean spaces: matrices, vectors, linear independence, determinants, subspaces, bases, change of coordinates, linear transformations, null spaces and ranges, projections, orthogonalization, eigenvalues and eigenvectors; as well as least-squares approximation, spectral decomposition, quadratic forms, convexity, principal component analysis, dimensionality reduction, and approximation in function spaces. Matlab will be used for computation and applications. Prerequisites: AS.110.107 OR AS.110.109 OR AS.110.113",
+          "Name": "EN.553.295",
+          "SssCoursesId": 45282,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Linear Algebra for Data Science"
         }
       ],
       "Prerequisites": [
@@ -29668,7 +29668,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866940",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "0/24",
+    "SeatsAvailable": "1/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -29815,7 +29815,7 @@
     "SectionRegRestrictions": "",
     "SelfSearch": "Y",
     "StartTime": 1100,
-    "Status": "Waitlist Only",
+    "Status": "Open",
     "SubDepartment": "",
     "Syllabus_Url": "https://assessment.jhu.edu/index.cfm/page/AefisCourseSection.publicSyllabus?courseSectionId=123263",
     "Term": "Fall 2026",
@@ -30815,7 +30815,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867660",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "0/24",
+    "SeatsAvailable": "1/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -32431,7 +32431,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867013",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "1/24",
+    "SeatsAvailable": "2/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -32955,7 +32955,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867011",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "8/24",
+    "SeatsAvailable": "7/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -33747,7 +33747,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867008",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "1/24",
+    "SeatsAvailable": "2/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
