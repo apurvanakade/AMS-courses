@@ -10498,7 +10498,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "877664",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "16/24",
+    "SeatsAvailable": "15/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -13228,7 +13228,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867073",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "6/30",
+    "SeatsAvailable": "5/30",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -13777,7 +13777,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867001",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "4/16",
+    "SeatsAvailable": "3/16",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -14193,7 +14193,7 @@
     "TimeOfDay": "Other",
     "Title": "Risk Measurement/Management in Financial Markets",
     "UGradPHStudies": "No",
-    "Waitlisted": "0",
+    "Waitlisted": "1",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "866999"
@@ -14438,7 +14438,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866996",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "24/30",
+    "SeatsAvailable": "25/30",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -14764,7 +14764,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866993",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "1/25",
+    "SeatsAvailable": "0/25",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -14851,7 +14851,7 @@
     "SectionRegRestrictions": "",
     "SelfSearch": "Y",
     "StartTime": 900,
-    "Status": "Reserved Open",
+    "Status": "Waitlist Only",
     "SubDepartment": "",
     "Syllabus_Url": "https://assessment.jhu.edu/index.cfm/page/AefisCourseSection.publicSyllabus?courseSectionId=123355",
     "Term": "Fall 2026",
@@ -15409,7 +15409,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866989",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "15/24",
+    "SeatsAvailable": "14/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -15898,7 +15898,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866986",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "10/24",
+    "SeatsAvailable": "9/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -16061,7 +16061,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866985",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "3/24",
+    "SeatsAvailable": "2/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -16479,7 +16479,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Introduction to Data Science",
     "UGradPHStudies": "No",
-    "Waitlisted": "8",
+    "Waitlisted": "9",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "866983"
@@ -16740,7 +16740,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866980",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "7/40",
+    "SeatsAvailable": "6/40",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -17165,7 +17165,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Bayesian Statistics",
     "UGradPHStudies": "No",
-    "Waitlisted": "0",
+    "Waitlisted": "1",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "867005"
@@ -17590,7 +17590,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866976",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "3/24",
+    "SeatsAvailable": "4/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -18475,7 +18475,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866970",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "17/28",
+    "SeatsAvailable": "16/28",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -18744,7 +18744,7 @@
     "TimeOfDay": "Other",
     "Title": "Applied Statistics & Data Analysis I",
     "UGradPHStudies": "No",
-    "Waitlisted": "0",
+    "Waitlisted": "1",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "866969"
@@ -22204,7 +22204,7 @@
     "TimeOfDay": "Other",
     "Title": "Investment Science",
     "UGradPHStudies": "No",
-    "Waitlisted": "3",
+    "Waitlisted": "4",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "866964"
@@ -22956,7 +22956,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866958",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "0/24",
+    "SeatsAvailable": "1/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -23117,7 +23117,7 @@
     "SectionRegRestrictions": "",
     "SelfSearch": "Y",
     "StartTime": 835,
-    "Status": "Waitlist Only",
+    "Status": "Open",
     "SubDepartment": "",
     "Syllabus_Url": "https://assessment.jhu.edu/index.cfm/page/AefisCourseSection.publicSyllabus?courseSectionId=123292",
     "Term": "Fall 2026",
@@ -23881,7 +23881,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867004",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "16/30",
+    "SeatsAvailable": "17/30",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -26371,7 +26371,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866961",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "13/24",
+    "SeatsAvailable": "12/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -30626,7 +30626,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867661",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "8/24",
+    "SeatsAvailable": "7/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -31240,7 +31240,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866934",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "10/24",
+    "SeatsAvailable": "11/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -31942,7 +31942,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866931",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "5/24",
+    "SeatsAvailable": "4/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -37437,7 +37437,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "865876",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "1/19",
+    "SeatsAvailable": "0/19",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
