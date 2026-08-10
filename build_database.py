@@ -293,7 +293,7 @@ def build_courses(term_files: list[tuple[str, list[dict]]]) -> tuple[dict[str, d
         "terms": set(),
         "sections": [],     # list of (offering_code, term, section, instructors,
                             #           syllabus_url, max_seats, seats_available,
-                            #           waitlisted, status)
+                            #           waitlisted, status, meetings, building)
         "prereq_raw": [],   # list of (expression, description, is_negative)
         "pcc_titles": {},   # course code -> title, from PrereqCoursesCatalogs
     })
@@ -326,6 +326,8 @@ def build_courses(term_files: list[tuple[str, list[dict]]]) -> tuple[dict[str, d
                 rec.get("SeatsAvailable"),
                 rec.get("Waitlisted"),
                 rec.get("Status"),
+                rec.get("Meetings"),
+                rec.get("Building"),
             ))
 
             for area in rec.get("Areas") or []:
@@ -602,6 +604,11 @@ CREATE TABLE course_sections (
     seats_available TEXT,   -- raw JHU field, e.g. "45/60"
     waitlisted TEXT,        -- raw JHU field, e.g. "0" or "N/A"
     status TEXT,            -- e.g. "Open", "Waitlist Only", "Approval Required"
+    meetings TEXT,          -- human-readable schedule, e.g. "MW 1:30PM - 2:45PM,
+                             -- F 1:30PM - 2:20PM"; empty for async/independent-study
+                             -- sections with no fixed meeting time
+    building TEXT,           -- comma-separated if the section meets in more than
+                              -- one building (matches multiple `meetings` clauses)
     PRIMARY KEY (code, offering_code, term, section)
 );
 
@@ -647,13 +654,13 @@ def build_database(courses: dict[str, dict], drop_codes: set[str], db_path: str,
         for term in c["terms"]:
             cur.execute("INSERT INTO course_terms (code, term) VALUES (?, ?)", (code, term))
 
-        for offering_code, term, section, instructors, syllabus_url, max_seats, seats_available, waitlisted, status in c["sections"]:
+        for offering_code, term, section, instructors, syllabus_url, max_seats, seats_available, waitlisted, status, meetings, building in c["sections"]:
             cur.execute(
                 "INSERT INTO course_sections (code, offering_code, term, section, instructors, "
-                "syllabus_url, max_seats, seats_available, waitlisted, status) "
-                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                "syllabus_url, max_seats, seats_available, waitlisted, status, meetings, building) "
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                 (code, offering_code, term, section, json.dumps(list(instructors)), syllabus_url,
-                 max_seats, seats_available, waitlisted, status),
+                 max_seats, seats_available, waitlisted, status, meetings, building),
             )
 
         seen_roots: set[tuple[str, bool]] = set()
@@ -789,9 +796,10 @@ def build_graph(courses: dict[str, dict], drop_codes: set[str], generated_at: st
                  "instructors": list(instructors),
                  "syllabus_url": syllabus_url or None, "max_seats": max_seats or None,
                  "seats_available": seats_available or None, "waitlisted": waitlisted or None,
-                 "status": status or None}
+                 "status": status or None, "meetings": meetings or None,
+                 "building": building or None}
                 for offering_code, term, section, instructors, syllabus_url, max_seats, seats_available,
-                    waitlisted, status in c["sections"]
+                    waitlisted, status, meetings, building in c["sections"]
             ],
         })
 

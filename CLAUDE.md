@@ -193,14 +193,20 @@ Two outputs, both fully reproducible by re-running the script:
   since that's the collapsed unit the rest of the script works with.
   `course_sections` is the exception: it keeps one row per actual section
   per term (`instructors`, `syllabus_url`, `max_seats`, `seats_available`,
-  `waitlisted`, `status`) because a single course can have many sections in
-  the same term taught by different people — that data doesn't collapse to
-  one row per course the way everything else does.
+  `waitlisted`, `status`, `meetings`, `building`) because a single course
+  can have many sections in the same term taught by different people —
+  that data doesn't collapse to one row per course the way everything else
+  does. `meetings` is JHU's own human-readable schedule string (e.g. `"MWF
+  12:00PM - 12:50PM, T 9:00AM - 9:50AM"`, comma-separating multiple meeting
+  blocks per section) rather than the raw `DaysOfWeek`/`StartTime`/
+  `EndTime` fields, since those only capture a section's first meeting
+  block; `building` is comma-separated in step with `meetings` for
+  sections that meet in more than one room.
 - `docs/graph.json` (committed) — a nodes/edges flattening of the same data
   for `docs/index.html` to fetch directly; no server-side build step. Each
   node's `sections` array mirrors `course_sections` (term, section,
-  instructors, syllabus_url, enrollment) and is rendered as a per-section
-  table in the visualizer's detail panel.
+  instructors, syllabus_url, enrollment, meetings, building) and is
+  rendered as a per-section table in the visualizer's detail panel.
 
 ## docs/ (the visualizer)
 

@@ -3,7 +3,7 @@
 
 #panel {
   position: relative;
-  width: 420px; flex: none; border-left: 1px solid var(--gridline);
+  width: 560px; flex: none; border-left: 1px solid var(--gridline);
   background: var(--surface-1);
   display: none;
 }
@@ -44,7 +44,7 @@
 #panel .empty { color: var(--muted); font-size: 12.5px; }
 #panel .termlist { font-size: 12px; color: var(--text-secondary); }
 #panel .table-scroll { overflow-x: auto; }
-#panel table.sections { width: 100%; min-width: 420px; border-collapse: collapse; font-size: 12px; }
+#panel table.sections { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 12px; }
 #panel table.sections th, #panel table.sections td {
   text-align: left; padding: 3px 6px 3px 0; border-bottom: 1px solid var(--border);
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 160px;
@@ -55,3 +55,4 @@
 #panel table.sections td { color: var(--text-secondary); }
 #panel table.sections td.section-term { color: var(--text-primary); font-weight: 600; white-space: normal; }
 #panel table.sections td.section-instructors { white-space: normal; }
+#panel table.sections td.section-meetings { white-space: normal; }

@@ -106,7 +106,7 @@ export function selectNode(n) {
     panelBody.appendChild(el("h3", { text: `Sections — ${store.term}` }));
     const table = el("table", { class: "sections" });
     const thead = el("tr");
-    for (const h of ["Sec", "Instructor(s)", "Seats", "Status", ""]) {
+    for (const h of ["Sec", "Instructor(s)", "Meets", "Building", "Seats", ""]) {
       thead.appendChild(el("th", { text: h }));
     }
     table.appendChild(thead);
@@ -123,8 +123,9 @@ export function selectNode(n) {
         : (s.section || "");
       row.appendChild(el("td", { class: "section-term", text: secLabel }));
       row.appendChild(el("td", { class: "section-instructors", text: (s.instructors || []).join(", ") }));
+      row.appendChild(el("td", { class: "section-meetings", text: s.meetings || "" }));
+      row.appendChild(el("td", { text: s.building || "" }));
       row.appendChild(el("td", { text: s.seats_available || "" }));
-      row.appendChild(el("td", { text: s.status || "" }));
       const linkCell = el("td");
       if (s.syllabus_url) {
         linkCell.appendChild(el("a", {
