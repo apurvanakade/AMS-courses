@@ -201,7 +201,12 @@ Two outputs, both fully reproducible by re-running the script:
   blocks per section) rather than the raw `DaysOfWeek`/`StartTime`/
   `EndTime` fields, since those only capture a section's first meeting
   block; `building` is comma-separated in step with `meetings` for
-  sections that meet in more than one room.
+  sections that meet in more than one room. It's *not* JHU's own top-level
+  `Building` field, which is a deduped, alphabetically sorted set of
+  buildings out of step with `Meetings`' chronological order —
+  `ordered_building()` rebuilds it instead from the per-meeting
+  `SectionDetails.Meetings` list, which carries a `Building` alongside each
+  entry in the same order `Meetings` was built from.
 - `docs/graph.json` (committed) — a nodes/edges flattening of the same data
   for `docs/index.html` to fetch directly; no server-side build step. Each
   node's `sections` array mirrors `course_sections` (term, section,

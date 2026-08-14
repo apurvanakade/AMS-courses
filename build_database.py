@@ -272,6 +272,18 @@ def most_common(values) -> str | None:
     return Counter(values).most_common(1)[0][0]
 
 
+def ordered_building(rec: dict) -> str | None:
+    """JHU's own top-level `Building` field is a deduped, alphabetically
+    sorted set of the section's meeting buildings, out of step with the
+    `Meetings` string's chronological order. `SectionDetails.Meetings` is a
+    list of per-meeting dicts in the same order `Meetings` was built from, so
+    rebuild the building string from that instead, one entry per meeting
+    (matching `Meetings`' comma count, including repeats)."""
+    meetings = rec.get("SectionDetails", {}).get("Meetings") or []
+    buildings = [m.get("Building") for m in meetings if m.get("Building")]
+    return ", ".join(buildings) if buildings else None
+
+
 def is_excluded(rec: dict) -> bool:
     """500-level, 800-level, and "Independent Academic Work" sections are
     one-off arrangements between a student and a faculty sponsor rather than
@@ -327,7 +339,7 @@ def build_courses(term_files: list[tuple[str, list[dict]]]) -> tuple[dict[str, d
                 rec.get("Waitlisted"),
                 rec.get("Status"),
                 rec.get("Meetings"),
-                rec.get("Building"),
+                ordered_building(rec),
             ))
 
             for area in rec.get("Areas") or []:
