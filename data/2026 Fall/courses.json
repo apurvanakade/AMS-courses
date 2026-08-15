@@ -4516,7 +4516,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Department Seminar",
     "UGradPHStudies": "No",
-    "Waitlisted": "0",
+    "Waitlisted": "1",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "867085"
@@ -4572,7 +4572,7 @@
     "Repeatable": "Y",
     "SSS_SectionsID": "894470",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "9/10",
+    "SeatsAvailable": "8/10",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -4968,7 +4968,7 @@
     "Repeatable": "Y",
     "SSS_SectionsID": "867257",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "9/10",
+    "SeatsAvailable": "10/10",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -9337,7 +9337,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867082",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "7/14",
+    "SeatsAvailable": "8/14",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -9908,7 +9908,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "880789",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "3/19",
+    "SeatsAvailable": "2/19",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -10782,7 +10782,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867649",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "5/25",
+    "SeatsAvailable": "6/25",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -11269,7 +11269,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Generative AI and Agentic Systems for Clinical Data Science and Biopharmaceutical Statistics",
     "UGradPHStudies": "No",
-    "Waitlisted": "19",
+    "Waitlisted": "20",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "880822"
@@ -11335,7 +11335,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867076",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "13/39",
+    "SeatsAvailable": "11/39",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -11643,7 +11643,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "880595",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "18/48",
+    "SeatsAvailable": "17/48",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -12203,7 +12203,7 @@
     "TimeOfDay": "Morning",
     "Title": "Methods in Computational Neuroscience",
     "UGradPHStudies": "No",
-    "Waitlisted": "11",
+    "Waitlisted": "12",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "880908"
@@ -12277,7 +12277,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "880592",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "10/20",
+    "SeatsAvailable": "9/20",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -12594,7 +12594,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867070",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "36/90",
+    "SeatsAvailable": "35/90",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -13228,7 +13228,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867073",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "5/30",
+    "SeatsAvailable": "4/30",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -13391,7 +13391,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "880591",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "29/30",
+    "SeatsAvailable": "28/30",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -14193,7 +14193,7 @@
     "TimeOfDay": "Other",
     "Title": "Risk Measurement/Management in Financial Markets",
     "UGradPHStudies": "No",
-    "Waitlisted": "1",
+    "Waitlisted": "2",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "866999"
@@ -14863,7 +14863,7 @@
     "TimeOfDay": "Other",
     "Title": "Investment Science",
     "UGradPHStudies": "No",
-    "Waitlisted": "0",
+    "Waitlisted": "1",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "866993"
@@ -15026,7 +15026,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Time Series Analysis",
     "UGradPHStudies": "No",
-    "Waitlisted": "10",
+    "Waitlisted": "12",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "867663"
@@ -15246,7 +15246,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866990",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "6/24",
+    "SeatsAvailable": "5/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -15572,7 +15572,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866988",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "23/24",
+    "SeatsAvailable": "21/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -16224,7 +16224,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866984",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "0/24",
+    "SeatsAvailable": "1/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -16304,7 +16304,7 @@
     "SectionRegRestrictions": "",
     "SelfSearch": "Y",
     "StartTime": 1200,
-    "Status": "Waitlist Only",
+    "Status": "Reserved Open",
     "SubDepartment": "",
     "Syllabus_Url": "https://assessment.jhu.edu/index.cfm/page/AefisCourseSection.publicSyllabus?courseSectionId=123347",
     "Term": "Fall 2026",
@@ -16316,7 +16316,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Introduction to Data Science",
     "UGradPHStudies": "No",
-    "Waitlisted": "5",
+    "Waitlisted": "3",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "866984"
@@ -16552,7 +16552,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867068",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "8/20",
+    "SeatsAvailable": "9/20",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -16740,7 +16740,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866980",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "4/40",
+    "SeatsAvailable": "3/40",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -16910,7 +16910,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867006",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "3/30",
+    "SeatsAvailable": "4/30",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -17073,7 +17073,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867005",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "0/30",
+    "SeatsAvailable": "1/30",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -17153,7 +17153,7 @@
     "SectionRegRestrictions": "",
     "SelfSearch": "Y",
     "StartTime": 1630,
-    "Status": "Waitlist Only",
+    "Status": "Reserved Open",
     "SubDepartment": "",
     "Syllabus_Url": "https://assessment.jhu.edu/index.cfm/page/AefisCourseSection.publicSyllabus?courseSectionId=123340",
     "Term": "Fall 2026",
@@ -17165,7 +17165,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Bayesian Statistics",
     "UGradPHStudies": "No",
-    "Waitlisted": "2",
+    "Waitlisted": "1",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "867005"
@@ -17590,7 +17590,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866976",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "4/24",
+    "SeatsAvailable": "2/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -17872,7 +17872,7 @@
     "TimeOfDay": "Other",
     "Title": "Stochastic Processes and Applications to Finance I",
     "UGradPHStudies": "No",
-    "Waitlisted": "0",
+    "Waitlisted": "2",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "866975"
@@ -18127,7 +18127,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866972",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "11/20",
+    "SeatsAvailable": "10/20",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -18986,7 +18986,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867063",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "3/8",
+    "SeatsAvailable": "2/8",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -19135,7 +19135,7 @@
     "LocationDelimited": [
       "Homewood Campus"
     ],
-    "MaxSeats": "25",
+    "MaxSeats": "10",
     "MedicineMDOnly": "N",
     "MeetingFormats": [
       "Discussion Section",
@@ -19152,7 +19152,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867059",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "24/25",
+    "SeatsAvailable": "8/10",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -19570,146 +19570,6 @@
     "Building": "",
     "CMN_TermsID": 1761,
     "CoursePrefix": "EN",
-    "Credits": "1.00 - 2.00",
-    "DOW": [],
-    "DOWSort": "99",
-    "DaysOfWeek": 0,
-    "Department": "EN Applied Mathematics & Statistics",
-    "Description": "A small number of undergraduates are individually paired with PhD students.  Each undergraduate will read by themself pages from a book and meet with their PhD mentor once a week for an hour, throughout the semester.",
-    "HasBio": "",
-    "HierarchicalTerm": {
-      "lvl0": "Fall 2026",
-      "lvl1": []
-    },
-    "InstructionMethod": "Blended",
-    "InstructionMethodFilter": [
-      "Blended"
-    ],
-    "Instructors": "",
-    "InstructorsDelimited": [],
-    "InstructorsFullName": "",
-    "IsIndependentStudy": "Y",
-    "IsWritingIntensive": "Non-Writing Intensive",
-    "Level": "Independent Academic Work",
-    "Location": "Homewood Campus",
-    "LocationDelimited": [
-      "Homewood Campus"
-    ],
-    "MaxSeats": "N/A",
-    "MedicineMDOnly": "N",
-    "MeetingFormats": [
-      "Independent Study/Research"
-    ],
-    "Meetings": "",
-    "OfferingName": "EN.553.513",
-    "OfferingVariations": [
-      "EN.553",
-      "553.513",
-      "513"
-    ],
-    "PosTags": [],
-    "Repeatable": "N",
-    "SSS_SectionsID": "884732",
-    "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "",
-    "SectionDetails": {
-      "CoRequisites": [],
-      "CreditType": "",
-      "Credits": "1.00 - 2.00",
-      "CrossListed": "N",
-      "DepartmentID": "43",
-      "Departments": "EN Applied Mathematics & Statistics",
-      "Description": "A small number of undergraduates are individually paired with PhD students.  Each undergraduate will read by themself pages from a book and meet with their PhD mentor once a week for an hour, throughout the semester.",
-      "Equivalencies": [],
-      "EvaluationUrls": [],
-      "Fees": [],
-      "GradeSystemName": "AE Ugrad Letter",
-      "InstructionMethods": "Blended",
-      "Instructors": [
-        {
-          "HopkinsID": ""
-        }
-      ],
-      "Meetings": [
-        {
-          "Building": "",
-          "DOW": "None",
-          "Dates": "08-31-2026 to 12-11-2026",
-          "Format": "Independent Study/Research",
-          "Times": ""
-        }
-      ],
-      "PosTags": [],
-      "PrereqCoursesCatalogs": [
-        {
-          "Description": "Used as a pre-requisite to make students use the Independent Academic Work form in OnBase.",
-          "Name": "AS.990.500",
-          "SssCoursesId": 41819,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Independent Academic Work Pre-Requisite"
-        }
-      ],
-      "Prerequisites": [
-        {
-          "Description": "You must request Customized Academic Learning using the Customized Academic Learning form found in Student Self-Service: Registration > Online Forms.",
-          "Expression": "AS.990.500[C]",
-          "IsNegative": "N"
-        }
-      ],
-      "Restrictions": [],
-      "SampleSyllabus": "",
-      "SectionCoReqNotes": "",
-      "SectionCoRequisites": "",
-      "StandardSyllabusLink": "",
-      "TextbookInformations": [
-        {
-          "AttributeValue": "Follett",
-          "BookstoreID": "2393",
-          "ClassStartDate": "20260831",
-          "CourseName": "EN.553.513",
-          "CourseNumber": "513",
-          "Department": "EN553",
-          "IdrGroupTerm": "Fall 2026",
-          "Location": "Homewood Campus",
-          "MbsGroupDesignator": "",
-          "MbsSiteCode": "",
-          "Name": "600",
-          "SectionNumber": "600",
-          "Term": "Fall2026",
-          "ZonesName": "ASEN - UGrad"
-        }
-      ],
-      "WebNotes": ""
-    },
-    "SectionName": "600",
-    "SectionRegRestrictions": "",
-    "SelfSearch": "Y",
-    "Status": "Approval Required",
-    "SubDepartment": "",
-    "Syllabus_Url": "https://assessment.jhu.edu/index.cfm/page/AefisCourse.publicSyllabus?courseid=22975",
-    "Term": "Fall 2026",
-    "TermStartDate": "2026-08-31 00:00:00.000",
-    "Term_IDR": "Fall 2026",
-    "Term_JSS": [
-      "Fall 2026"
-    ],
-    "TimeOfDay": "Other",
-    "Title": "Directed Reading in Applied Mathematics",
-    "UGradPHStudies": "No",
-    "Waitlisted": "N/A",
-    "ZoneName": "ASEN - UGrad",
-    "ZonesId": 5,
-    "id": "884732"
-  },
-  {
-    "AllDepartments": [
-      "EN Applied Mathematics & Statistics"
-    ],
-    "Areas": [],
-    "Building": "",
-    "CMN_TermsID": 1761,
-    "CoursePrefix": "EN",
     "Credits": "1.00 - 6.00",
     "DOW": [],
     "DOWSort": "99",
@@ -19872,9 +19732,9 @@
       "lvl0": "Fall 2026",
       "lvl1": []
     },
-    "InstructionMethod": "Blended",
+    "InstructionMethod": "In-person",
     "InstructionMethodFilter": [
-      "Blended"
+      "In-person"
     ],
     "Instructors": "",
     "InstructorsDelimited": [],
@@ -19900,7 +19760,7 @@
     ],
     "PosTags": [],
     "Repeatable": "N",
-    "SSS_SectionsID": "884726",
+    "SSS_SectionsID": "884725",
     "SchoolName": "Whiting School of Engineering",
     "SeatsAvailable": "",
     "SectionDetails": {
@@ -19915,7 +19775,7 @@
       "EvaluationUrls": [],
       "Fees": [],
       "GradeSystemName": "AE Ugrad S/U",
-      "InstructionMethods": "Blended",
+      "InstructionMethods": "In-person",
       "Instructors": [
         {
           "HopkinsID": ""
@@ -19965,18 +19825,18 @@
           "Location": "Homewood Campus",
           "MbsGroupDesignator": "",
           "MbsSiteCode": "",
-          "Name": "600",
-          "SectionNumber": "600",
+          "Name": "000",
+          "SectionNumber": "000",
           "Term": "Fall2026",
           "ZonesName": "ASEN - UGrad"
         }
       ],
       "WebNotes": ""
     },
-    "SectionName": "600",
+    "SectionName": "000",
     "SectionRegRestrictions": "",
     "SelfSearch": "Y",
-    "Status": "Approval Required",
+    "Status": "Closed",
     "SubDepartment": "",
     "Syllabus_Url": "https://assessment.jhu.edu/index.cfm/page/AefisCourse.publicSyllabus?courseid=12388",
     "Term": "Fall 2026",
@@ -19991,7 +19851,7 @@
     "Waitlisted": "N/A",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
-    "id": "884726"
+    "id": "884725"
   },
   {
     "AllDepartments": [
@@ -20861,7 +20721,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867055",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "9/14",
+    "SeatsAvailable": "8/14",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -21317,38 +21177,6 @@
       ],
       "PrereqCoursesCatalogs": [
         {
-          "Description": "Introduction to the mathematics of finite systems. Logic; Boolean algebra; induction and recursion; sets, functions, relations, equivalence, and partially ordered sets; elementary combinatorics; modular arithmetic and the Euclidean algorithm; group theory; permutations and symmetry groups; graph theory. Selected applications. The concept of a proof and development of the ability to recognize and construct proofs are part of the course. Recommended Course Background: Four years of high school mathematics.",
-          "Name": "EN.553.171",
-          "SssCoursesId": 39339,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Discrete Mathematics"
-        },
-        {
-          "Description": "An introduction to combinatorial analysis at the graduate level. Meets concurrently with 553.471. Counting techniques: generating functions, recurrence relations, Polya\u2019s theorem. Combinatorial designs: Latin squares, finite geometries, balanced incomplete block designs. Emphasis on problem solving. Recommended Course Background: EN.553.291 or AS.110.201",
-          "Name": "EN.553.671",
-          "SssCoursesId": 39789,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Combinatorial Analysis"
-        },
-        {
-          "Description": "Study of systems of \u201cvertices\u201d with some pairs joined by \u201cedges.\u201d Theory of adjacency, connectivity, traversability, feedback, and other concepts underlying properties important in engineering and the sciences. Topics include paths, cycles, and trees; routing problems associated with Euler and Hamilton; design of graphs realizing specified incidence conditions and other constraints. Attention directed toward problem solving, algorithms, and applications. One or more topics taken up in greater depth. Recommended Course Background: (EN.553.291 OR AS.110.201 OR AS.110.212)",
-          "Name": "EN.553.672",
-          "SssCoursesId": 39627,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Graph Theory"
-        },
-        {
-          "Description": "Study of systems of \u201cvertices\u201d with some pairs joined by \u201cedges.\u201d Theory of adjacency, connectivity, traversability, feedback, and other concepts underlying properties important in engineering and the sciences. Topics include paths, cycles, and trees; routing problems associated with Euler and Hamilton; design of graphs realizing specified incidence conditions and other constraints. Attention directed toward problem solving, algorithms, and applications. One or more topics taken up in greater depth.",
-          "Name": "EN.553.472",
-          "SssCoursesId": 39616,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Graph Theory"
-        },
-        {
           "Description": "An introduction to combinatorial analysis at the graduate level. Meets concurrently with 553.471. Counting techniques: generating functions, recurrence relations, Polya\u2019s theorem. Combinatorial designs: Latin squares, finite geometries, balanced incomplete block designs. Emphasis on problem solving. Recommended Course Background: EN.553.291 or AS.110.201",
           "Name": "EN.553.671",
           "SssCoursesId": 39789,
@@ -21403,6 +21231,38 @@
           "StatusName": "Active",
           "TermName": "AE Fall 2026",
           "Title": "Linear Algebra for Data Science"
+        },
+        {
+          "Description": "Introduction to the mathematics of finite systems. Logic; Boolean algebra; induction and recursion; sets, functions, relations, equivalence, and partially ordered sets; elementary combinatorics; modular arithmetic and the Euclidean algorithm; group theory; permutations and symmetry groups; graph theory. Selected applications. The concept of a proof and development of the ability to recognize and construct proofs are part of the course. Recommended Course Background: Four years of high school mathematics.",
+          "Name": "EN.553.171",
+          "SssCoursesId": 39339,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Discrete Mathematics"
+        },
+        {
+          "Description": "An introduction to combinatorial analysis at the graduate level. Meets concurrently with 553.471. Counting techniques: generating functions, recurrence relations, Polya\u2019s theorem. Combinatorial designs: Latin squares, finite geometries, balanced incomplete block designs. Emphasis on problem solving. Recommended Course Background: EN.553.291 or AS.110.201",
+          "Name": "EN.553.671",
+          "SssCoursesId": 39789,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Combinatorial Analysis"
+        },
+        {
+          "Description": "Study of systems of \u201cvertices\u201d with some pairs joined by \u201cedges.\u201d Theory of adjacency, connectivity, traversability, feedback, and other concepts underlying properties important in engineering and the sciences. Topics include paths, cycles, and trees; routing problems associated with Euler and Hamilton; design of graphs realizing specified incidence conditions and other constraints. Attention directed toward problem solving, algorithms, and applications. One or more topics taken up in greater depth. Recommended Course Background: (EN.553.291 OR AS.110.201 OR AS.110.212)",
+          "Name": "EN.553.672",
+          "SssCoursesId": 39627,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Graph Theory"
+        },
+        {
+          "Description": "Study of systems of \u201cvertices\u201d with some pairs joined by \u201cedges.\u201d Theory of adjacency, connectivity, traversability, feedback, and other concepts underlying properties important in engineering and the sciences. Topics include paths, cycles, and trees; routing problems associated with Euler and Hamilton; design of graphs realizing specified incidence conditions and other constraints. Attention directed toward problem solving, algorithms, and applications. One or more topics taken up in greater depth.",
+          "Name": "EN.553.472",
+          "SssCoursesId": 39616,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Graph Theory"
         }
       ],
       "Prerequisites": [
@@ -21463,7 +21323,7 @@
     "TimeOfDay": "Morning",
     "Title": "Combinatorial Analysis",
     "UGradPHStudies": "No",
-    "Waitlisted": "1",
+    "Waitlisted": "2",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "866967"
@@ -22956,7 +22816,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866958",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "1/24",
+    "SeatsAvailable": "0/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -23117,7 +22977,7 @@
     "SectionRegRestrictions": "",
     "SelfSearch": "Y",
     "StartTime": 835,
-    "Status": "Open",
+    "Status": "Waitlist Only",
     "SubDepartment": "",
     "Syllabus_Url": "https://assessment.jhu.edu/index.cfm/page/AefisCourseSection.publicSyllabus?courseSectionId=123292",
     "Term": "Fall 2026",
@@ -23881,7 +23741,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867004",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "16/30",
+    "SeatsAvailable": "15/30",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -24452,30 +24312,6 @@
       ],
       "PrereqCoursesCatalogs": [
         {
-          "Description": "Vector spaces, matrices, and linear transformations. Solutions of systems of linear equations. Eigenvalues, eigenvectors, and diagonalization of matrices. Applications to differential equations.",
-          "Name": "AS.110.201",
-          "SssCoursesId": 3084,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Linear Algebra"
-        },
-        {
-          "Description": "This course includes the material in AS.110.201 with additional applications and theory, and is recommended only for mathematically able students majoring in physical science, engineering, or mathematics who are interested in a proof-based version of linear algebra. This course can serve as an Introduction to Proofs (IP) course.  \nPrerequisites: Grade of B+ or better in 110.107 or 110.109 or 110.113, or a 5 on the AP BC exam. \nArea: Quantitative and Mathematical Sciences.",
-          "Name": "AS.110.212",
-          "SssCoursesId": 3092,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Honors Linear Algebra"
-        },
-        {
-          "Description": "An introduction to the basic concepts of linear algebra, matrix theory, and differential equations that are used widely in modern engineering and science. Students who earn credit for EN.553.291 Linear Algebra and Differential Equations may also earn credit for AS.110.302 Differential Equations and Applications, if taken in that order. However, for the Applied Mathematics and Statistics major, AS.110.302 Differential Equations and Applications will not count towards the differential equations major requirement if EN.553.291 Linear Algebra and Differential Equations was already completed. Students who earn credit for AS.110.302 Differential Equations and Applications may not later also earn credit for EN.553.291 Linear Algebra and Differential Equations.",
-          "Name": "EN.553.291",
-          "SssCoursesId": 39341,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Linear Algebra and Differential Equations"
-        },
-        {
           "Description": "A thorough introduction to linear algebra, with a focus on applications to data science and statistics. Topics include linear algebra in Euclidean spaces: matrices, vectors, linear independence, determinants, subspaces, bases, change of coordinates, linear transformations, null spaces and ranges, projections, orthogonalization, eigenvalues and eigenvectors; as well as least-squares approximation, spectral decomposition, quadratic forms, convexity, principal component analysis, dimensionality reduction, and approximation in function spaces. Matlab will be used for computation and applications. Prerequisites: AS.110.107 OR AS.110.109 OR AS.110.113",
           "Name": "EN.553.295",
           "SssCoursesId": 45282,
@@ -24522,6 +24358,30 @@
           "StatusName": "Active",
           "TermName": "AE Fall 2026",
           "Title": "Honors Probability"
+        },
+        {
+          "Description": "Vector spaces, matrices, and linear transformations. Solutions of systems of linear equations. Eigenvalues, eigenvectors, and diagonalization of matrices. Applications to differential equations.",
+          "Name": "AS.110.201",
+          "SssCoursesId": 3084,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Linear Algebra"
+        },
+        {
+          "Description": "This course includes the material in AS.110.201 with additional applications and theory, and is recommended only for mathematically able students majoring in physical science, engineering, or mathematics who are interested in a proof-based version of linear algebra. This course can serve as an Introduction to Proofs (IP) course.  \nPrerequisites: Grade of B+ or better in 110.107 or 110.109 or 110.113, or a 5 on the AP BC exam. \nArea: Quantitative and Mathematical Sciences.",
+          "Name": "AS.110.212",
+          "SssCoursesId": 3092,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Honors Linear Algebra"
+        },
+        {
+          "Description": "An introduction to the basic concepts of linear algebra, matrix theory, and differential equations that are used widely in modern engineering and science. Students who earn credit for EN.553.291 Linear Algebra and Differential Equations may also earn credit for AS.110.302 Differential Equations and Applications, if taken in that order. However, for the Applied Mathematics and Statistics major, AS.110.302 Differential Equations and Applications will not count towards the differential equations major requirement if EN.553.291 Linear Algebra and Differential Equations was already completed. Students who earn credit for AS.110.302 Differential Equations and Applications may not later also earn credit for EN.553.291 Linear Algebra and Differential Equations.",
+          "Name": "EN.553.291",
+          "SssCoursesId": 39341,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Linear Algebra and Differential Equations"
         }
       ],
       "Prerequisites": [
@@ -25185,7 +25045,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866956",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "8/24",
+    "SeatsAvailable": "9/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -26079,7 +25939,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866953",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "9/24",
+    "SeatsAvailable": "7/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -28188,7 +28048,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866946",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "1/24",
+    "SeatsAvailable": "0/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -28363,7 +28223,7 @@
     "TimeOfDay": "Other",
     "Title": "Intro to Optimization",
     "UGradPHStudies": "No",
-    "Waitlisted": "1",
+    "Waitlisted": "0",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "866946"
@@ -28708,7 +28568,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866944",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "11/24",
+    "SeatsAvailable": "10/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -28948,7 +28808,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866943",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "14/24",
+    "SeatsAvailable": "15/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -29428,7 +29288,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866941",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "6/24",
+    "SeatsAvailable": "5/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -30388,7 +30248,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866937",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "1/24",
+    "SeatsAvailable": "0/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -30535,7 +30395,7 @@
     "SectionRegRestrictions": "",
     "SelfSearch": "Y",
     "StartTime": 900,
-    "Status": "Open",
+    "Status": "Waitlist Only",
     "SubDepartment": "",
     "Syllabus_Url": "https://assessment.jhu.edu/index.cfm/page/AefisCourseSection.publicSyllabus?courseSectionId=123260",
     "Term": "Fall 2026",
@@ -31708,7 +31568,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866932",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "13/24",
+    "SeatsAvailable": "14/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -32963,7 +32823,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867011",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "8/24",
+    "SeatsAvailable": "9/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -33755,7 +33615,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867008",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "1/24",
+    "SeatsAvailable": "0/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -34420,7 +34280,7 @@
     "TimeOfDay": "Other",
     "Title": "Honors Discrete Mathematics",
     "UGradPHStudies": "No",
-    "Waitlisted": "1",
+    "Waitlisted": "0",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "867003"
@@ -35214,7 +35074,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866923",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "0/18",
+    "SeatsAvailable": "1/18",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -35344,7 +35204,7 @@
     "SectionRegRestrictions": "",
     "SelfSearch": "Y",
     "StartTime": 900,
-    "Status": "Waitlist Only",
+    "Status": "Open",
     "SubDepartment": "",
     "Syllabus_Url": "https://assessment.jhu.edu/index.cfm/page/AefisCourseSection.publicSyllabus?courseSectionId=198376",
     "Term": "Fall 2026",
@@ -35435,7 +35295,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866922",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "9/18",
+    "SeatsAvailable": "10/18",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -36332,7 +36192,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Gateway Computing: Python",
     "UGradPHStudies": "No",
-    "Waitlisted": "2",
+    "Waitlisted": "3",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "892980"
@@ -36744,7 +36604,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Gateway Computing: Python",
     "UGradPHStudies": "No",
-    "Waitlisted": "12",
+    "Waitlisted": "11",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "880580"
@@ -37362,7 +37222,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Gateway Computing: Python",
     "UGradPHStudies": "No",
-    "Waitlisted": "0",
+    "Waitlisted": "1",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "865877"
@@ -38598,7 +38458,7 @@
     "TimeOfDay": "Morning",
     "Title": "Gateway Computing: Python",
     "UGradPHStudies": "No",
-    "Waitlisted": "2",
+    "Waitlisted": "1",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "865871"
@@ -38804,7 +38664,7 @@
     "TimeOfDay": "Morning",
     "Title": "Gateway Computing: Python",
     "UGradPHStudies": "No",
-    "Waitlisted": "6",
+    "Waitlisted": "7",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "865870"
@@ -38887,7 +38747,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "865869",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "1/19",
+    "SeatsAvailable": "0/19",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -39010,7 +38870,7 @@
     "TimeOfDay": "Morning",
     "Title": "Gateway Computing: Python",
     "UGradPHStudies": "No",
-    "Waitlisted": "6",
+    "Waitlisted": "7",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "865869"
