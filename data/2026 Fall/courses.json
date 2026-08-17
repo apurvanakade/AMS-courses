@@ -3354,7 +3354,7 @@
     "Repeatable": "Y",
     "SSS_SectionsID": "867544",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "5/5",
+    "SeatsAvailable": "4/5",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -8532,7 +8532,7 @@
     "Repeatable": "Y",
     "SSS_SectionsID": "867230",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "8/10",
+    "SeatsAvailable": "7/10",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -10440,7 +10440,7 @@
     "TimeOfDay": "Morning",
     "Title": "Nonlinear Optimization I",
     "UGradPHStudies": "No",
-    "Waitlisted": "10",
+    "Waitlisted": "11",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "867078"
@@ -11132,7 +11132,7 @@
     "TimeOfDay": "Other",
     "Title": "Large Language Models: Foundations and Algorithms",
     "UGradPHStudies": "No",
-    "Waitlisted": "19",
+    "Waitlisted": "20",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "880924"
@@ -15898,7 +15898,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866986",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "9/24",
+    "SeatsAvailable": "8/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -16479,7 +16479,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Introduction to Data Science",
     "UGradPHStudies": "No",
-    "Waitlisted": "9",
+    "Waitlisted": "8",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "866983"
@@ -16910,7 +16910,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867006",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "4/30",
+    "SeatsAvailable": "2/30",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -18475,7 +18475,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866970",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "14/28",
+    "SeatsAvailable": "13/28",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -20721,7 +20721,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867055",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "8/14",
+    "SeatsAvailable": "7/14",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -21177,38 +21177,6 @@
       ],
       "PrereqCoursesCatalogs": [
         {
-          "Description": "Introduction to the mathematics of finite systems. Logic; Boolean algebra; induction and recursion; sets, functions, relations, equivalence, and partially ordered sets; elementary combinatorics; modular arithmetic and the Euclidean algorithm; group theory; permutations and symmetry groups; graph theory. Selected applications. The concept of a proof and development of the ability to recognize and construct proofs are part of the course. Recommended Course Background: Four years of high school mathematics.",
-          "Name": "EN.553.171",
-          "SssCoursesId": 39339,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Discrete Mathematics"
-        },
-        {
-          "Description": "An introduction to combinatorial analysis at the graduate level. Meets concurrently with 553.471. Counting techniques: generating functions, recurrence relations, Polya\u2019s theorem. Combinatorial designs: Latin squares, finite geometries, balanced incomplete block designs. Emphasis on problem solving. Recommended Course Background: EN.553.291 or AS.110.201",
-          "Name": "EN.553.671",
-          "SssCoursesId": 39789,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Combinatorial Analysis"
-        },
-        {
-          "Description": "Study of systems of \u201cvertices\u201d with some pairs joined by \u201cedges.\u201d Theory of adjacency, connectivity, traversability, feedback, and other concepts underlying properties important in engineering and the sciences. Topics include paths, cycles, and trees; routing problems associated with Euler and Hamilton; design of graphs realizing specified incidence conditions and other constraints. Attention directed toward problem solving, algorithms, and applications. One or more topics taken up in greater depth. Recommended Course Background: (EN.553.291 OR AS.110.201 OR AS.110.212)",
-          "Name": "EN.553.672",
-          "SssCoursesId": 39627,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Graph Theory"
-        },
-        {
-          "Description": "Study of systems of \u201cvertices\u201d with some pairs joined by \u201cedges.\u201d Theory of adjacency, connectivity, traversability, feedback, and other concepts underlying properties important in engineering and the sciences. Topics include paths, cycles, and trees; routing problems associated with Euler and Hamilton; design of graphs realizing specified incidence conditions and other constraints. Attention directed toward problem solving, algorithms, and applications. One or more topics taken up in greater depth.",
-          "Name": "EN.553.472",
-          "SssCoursesId": 39616,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Graph Theory"
-        },
-        {
           "Description": "An introduction to combinatorial analysis at the graduate level. Meets concurrently with 553.471. Counting techniques: generating functions, recurrence relations, Polya\u2019s theorem. Combinatorial designs: Latin squares, finite geometries, balanced incomplete block designs. Emphasis on problem solving. Recommended Course Background: EN.553.291 or AS.110.201",
           "Name": "EN.553.671",
           "SssCoursesId": 39789,
@@ -21263,6 +21231,38 @@
           "StatusName": "Active",
           "TermName": "AE Fall 2026",
           "Title": "Linear Algebra for Data Science"
+        },
+        {
+          "Description": "Introduction to the mathematics of finite systems. Logic; Boolean algebra; induction and recursion; sets, functions, relations, equivalence, and partially ordered sets; elementary combinatorics; modular arithmetic and the Euclidean algorithm; group theory; permutations and symmetry groups; graph theory. Selected applications. The concept of a proof and development of the ability to recognize and construct proofs are part of the course. Recommended Course Background: Four years of high school mathematics.",
+          "Name": "EN.553.171",
+          "SssCoursesId": 39339,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Discrete Mathematics"
+        },
+        {
+          "Description": "An introduction to combinatorial analysis at the graduate level. Meets concurrently with 553.471. Counting techniques: generating functions, recurrence relations, Polya\u2019s theorem. Combinatorial designs: Latin squares, finite geometries, balanced incomplete block designs. Emphasis on problem solving. Recommended Course Background: EN.553.291 or AS.110.201",
+          "Name": "EN.553.671",
+          "SssCoursesId": 39789,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Combinatorial Analysis"
+        },
+        {
+          "Description": "Study of systems of \u201cvertices\u201d with some pairs joined by \u201cedges.\u201d Theory of adjacency, connectivity, traversability, feedback, and other concepts underlying properties important in engineering and the sciences. Topics include paths, cycles, and trees; routing problems associated with Euler and Hamilton; design of graphs realizing specified incidence conditions and other constraints. Attention directed toward problem solving, algorithms, and applications. One or more topics taken up in greater depth. Recommended Course Background: (EN.553.291 OR AS.110.201 OR AS.110.212)",
+          "Name": "EN.553.672",
+          "SssCoursesId": 39627,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Graph Theory"
+        },
+        {
+          "Description": "Study of systems of \u201cvertices\u201d with some pairs joined by \u201cedges.\u201d Theory of adjacency, connectivity, traversability, feedback, and other concepts underlying properties important in engineering and the sciences. Topics include paths, cycles, and trees; routing problems associated with Euler and Hamilton; design of graphs realizing specified incidence conditions and other constraints. Attention directed toward problem solving, algorithms, and applications. One or more topics taken up in greater depth.",
+          "Name": "EN.553.472",
+          "SssCoursesId": 39616,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Graph Theory"
         }
       ],
       "Prerequisites": [
@@ -24312,6 +24312,14 @@
       ],
       "PrereqCoursesCatalogs": [
         {
+          "Description": "A thorough introduction to linear algebra, with a focus on applications to data science and statistics. Topics include linear algebra in Euclidean spaces: matrices, vectors, linear independence, determinants, subspaces, bases, change of coordinates, linear transformations, null spaces and ranges, projections, orthogonalization, eigenvalues and eigenvectors; as well as least-squares approximation, spectral decomposition, quadratic forms, convexity, principal component analysis, dimensionality reduction, and approximation in function spaces. Matlab will be used for computation and applications. Prerequisites: AS.110.107 OR AS.110.109 OR AS.110.113",
+          "Name": "EN.553.295",
+          "SssCoursesId": 45282,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Linear Algebra for Data Science"
+        },
+        {
           "Description": "Introduction to the basic principles of mathematical statistics and data analysis. Emphasis on techniques of application. Classical parametric estimation, hypothesis testing, and multiple decision problems; linear models, analysis of variance, and regression; nonparametric and robust procedures; decision-theoretic setting, Bayesian methods. Recommended Course Background: EN.553.620 AND ( AS.110.201 OR AS.110.212 OR EN.553.291 ).",
           "Name": "EN.553.630",
           "SssCoursesId": 39383,
@@ -24374,14 +24382,6 @@
           "StatusName": "Active",
           "TermName": "AE Fall 2026",
           "Title": "Linear Algebra and Differential Equations"
-        },
-        {
-          "Description": "A thorough introduction to linear algebra, with a focus on applications to data science and statistics. Topics include linear algebra in Euclidean spaces: matrices, vectors, linear independence, determinants, subspaces, bases, change of coordinates, linear transformations, null spaces and ranges, projections, orthogonalization, eigenvalues and eigenvectors; as well as least-squares approximation, spectral decomposition, quadratic forms, convexity, principal component analysis, dimensionality reduction, and approximation in function spaces. Matlab will be used for computation and applications. Prerequisites: AS.110.107 OR AS.110.109 OR AS.110.113",
-          "Name": "EN.553.295",
-          "SssCoursesId": 45282,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Linear Algebra for Data Science"
         }
       ],
       "Prerequisites": [
@@ -29288,7 +29288,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866941",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "6/24",
+    "SeatsAvailable": "5/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -34611,6 +34611,22 @@
       "PosTags": [],
       "PrereqCoursesCatalogs": [
         {
+          "Description": "Introduction to the mathematics of finite systems. Logic; Boolean algebra; induction and recursion; sets, functions, relations, equivalence, and partially ordered sets; elementary combinatorics; modular arithmetic and the Euclidean algorithm; polynomials rings, group theory; permutations groups and Galois theory; graph theory. Selected applications. The concept of a proof and development of the ability to recognize and construct proofs and analyze algorithms are part of the course. Recommended Course Background: Four years of high school mathematics.",
+          "Name": "EN.553.172",
+          "SssCoursesId": 41436,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Honors Discrete Mathematics"
+        },
+        {
+          "Description": "This course provides an introduction to mathematical reasoning and discrete structures relevant to computer science. Topics include propositional and predicate logic, proof techniques including mathematical induction, sets, relations, functions, recurrences, counting techniques, simple computational models, asymptotic analysis, discrete probability, graphs, trees, and number theory.",
+          "Name": "EN.601.230",
+          "SssCoursesId": 44204,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Mathematical Foundations for Computer Science"
+        },
+        {
           "Description": "Counting techniques: generating functions, recurrence relations, Polya\u2019s theorem. Combinatorial designs: Latin squares, finite geometries, balanced incomplete block designs. Emphasis on problem solving. Recommended Course Background: AS.553.291 or AS.110.201\n\nStudents who have received credit for AS.110.106 and/or AS.110.107 taken prior to Fall 2020 should contact the course instructor to determine whether they can receive permission to register for this course.",
           "Name": "EN.553.471",
           "SssCoursesId": 39348,
@@ -34641,22 +34657,6 @@
           "StatusName": "Active",
           "TermName": "AE Fall 2026",
           "Title": "Graph Theory"
-        },
-        {
-          "Description": "Introduction to the mathematics of finite systems. Logic; Boolean algebra; induction and recursion; sets, functions, relations, equivalence, and partially ordered sets; elementary combinatorics; modular arithmetic and the Euclidean algorithm; polynomials rings, group theory; permutations groups and Galois theory; graph theory. Selected applications. The concept of a proof and development of the ability to recognize and construct proofs and analyze algorithms are part of the course. Recommended Course Background: Four years of high school mathematics.",
-          "Name": "EN.553.172",
-          "SssCoursesId": 41436,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Honors Discrete Mathematics"
-        },
-        {
-          "Description": "This course provides an introduction to mathematical reasoning and discrete structures relevant to computer science. Topics include propositional and predicate logic, proof techniques including mathematical induction, sets, relations, functions, recurrences, counting techniques, simple computational models, asymptotic analysis, discrete probability, graphs, trees, and number theory.",
-          "Name": "EN.601.230",
-          "SssCoursesId": 44204,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Mathematical Foundations for Computer Science"
         },
         {
           "Description": "Counting techniques: generating functions, recurrence relations, Polya\u2019s theorem. Combinatorial designs: Latin squares, finite geometries, balanced incomplete block designs. Emphasis on problem solving. Recommended Course Background: AS.553.291 or AS.110.201\n\nStudents who have received credit for AS.110.106 and/or AS.110.107 taken prior to Fall 2020 should contact the course instructor to determine whether they can receive permission to register for this course.",
@@ -34862,6 +34862,22 @@
       "PosTags": [],
       "PrereqCoursesCatalogs": [
         {
+          "Description": "Introduction to the mathematics of finite systems. Logic; Boolean algebra; induction and recursion; sets, functions, relations, equivalence, and partially ordered sets; elementary combinatorics; modular arithmetic and the Euclidean algorithm; polynomials rings, group theory; permutations groups and Galois theory; graph theory. Selected applications. The concept of a proof and development of the ability to recognize and construct proofs and analyze algorithms are part of the course. Recommended Course Background: Four years of high school mathematics.",
+          "Name": "EN.553.172",
+          "SssCoursesId": 41436,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Honors Discrete Mathematics"
+        },
+        {
+          "Description": "This course provides an introduction to mathematical reasoning and discrete structures relevant to computer science. Topics include propositional and predicate logic, proof techniques including mathematical induction, sets, relations, functions, recurrences, counting techniques, simple computational models, asymptotic analysis, discrete probability, graphs, trees, and number theory.",
+          "Name": "EN.601.230",
+          "SssCoursesId": 44204,
+          "StatusName": "Active",
+          "TermName": "AE Fall 2026",
+          "Title": "Mathematical Foundations for Computer Science"
+        },
+        {
           "Description": "Counting techniques: generating functions, recurrence relations, Polya\u2019s theorem. Combinatorial designs: Latin squares, finite geometries, balanced incomplete block designs. Emphasis on problem solving. Recommended Course Background: AS.553.291 or AS.110.201\n\nStudents who have received credit for AS.110.106 and/or AS.110.107 taken prior to Fall 2020 should contact the course instructor to determine whether they can receive permission to register for this course.",
           "Name": "EN.553.471",
           "SssCoursesId": 39348,
@@ -34892,22 +34908,6 @@
           "StatusName": "Active",
           "TermName": "AE Fall 2026",
           "Title": "Graph Theory"
-        },
-        {
-          "Description": "Introduction to the mathematics of finite systems. Logic; Boolean algebra; induction and recursion; sets, functions, relations, equivalence, and partially ordered sets; elementary combinatorics; modular arithmetic and the Euclidean algorithm; polynomials rings, group theory; permutations groups and Galois theory; graph theory. Selected applications. The concept of a proof and development of the ability to recognize and construct proofs and analyze algorithms are part of the course. Recommended Course Background: Four years of high school mathematics.",
-          "Name": "EN.553.172",
-          "SssCoursesId": 41436,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Honors Discrete Mathematics"
-        },
-        {
-          "Description": "This course provides an introduction to mathematical reasoning and discrete structures relevant to computer science. Topics include propositional and predicate logic, proof techniques including mathematical induction, sets, relations, functions, recurrences, counting techniques, simple computational models, asymptotic analysis, discrete probability, graphs, trees, and number theory.",
-          "Name": "EN.601.230",
-          "SssCoursesId": 44204,
-          "StatusName": "Active",
-          "TermName": "AE Fall 2026",
-          "Title": "Mathematical Foundations for Computer Science"
         },
         {
           "Description": "Counting techniques: generating functions, recurrence relations, Polya\u2019s theorem. Combinatorial designs: Latin squares, finite geometries, balanced incomplete block designs. Emphasis on problem solving. Recommended Course Background: AS.553.291 or AS.110.201\n\nStudents who have received credit for AS.110.106 and/or AS.110.107 taken prior to Fall 2020 should contact the course instructor to determine whether they can receive permission to register for this course.",
@@ -36275,7 +36275,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "892979",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "1/19",
+    "SeatsAvailable": "2/19",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
