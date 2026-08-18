@@ -28,6 +28,7 @@ import datetime
 import json
 import os
 import sys
+import traceback
 
 import requests
 
@@ -36,6 +37,17 @@ COLLECTION = "sections"
 PAGE_SIZE = 250
 
 DATA_DIR = "data"
+LOG_DIR = "logs"
+LOG_PATH = os.path.join(LOG_DIR, "fetch_courses.log")
+
+
+def log_error(message: str) -> None:
+    """Append a timestamped scraping error (with traceback) to LOG_PATH."""
+    os.makedirs(LOG_DIR, exist_ok=True)
+    with open(LOG_PATH, "a") as f:
+        f.write(f"[{datetime.datetime.now().isoformat()}] {message}\n")
+        f.write(traceback.format_exc())
+        f.write("\n")
 
 
 def term_to_folder(term: str) -> str:
@@ -176,8 +188,14 @@ def main() -> int:
         print("Aborted.")
         return 1
 
-    config = get_typesense_config()
-    courses = fetch_courses(args.school, args.department, term, config)
+    try:
+        config = get_typesense_config()
+        courses = fetch_courses(args.school, args.department, term, config)
+    except Exception as e:
+        log_error(f'Failed to fetch "{term}" ({args.school} / {args.department}): {e}')
+        print(f"Error fetching course data: {e}", file=sys.stderr)
+        print(f"Details logged to {LOG_PATH}", file=sys.stderr)
+        return 1
 
     os.makedirs(out_dir, exist_ok=True)
     write_json(courses, json_path)

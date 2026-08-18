@@ -55,7 +55,7 @@ no bundler.
 ## Automated refresh
 
 `.github/workflows/refresh-courses.yml` runs `scripts/refresh_terms.py`
-weekly (Monday 13:00 UTC, plus `workflow_dispatch` for a manual trigger),
+daily (03:00 UTC, plus `workflow_dispatch` for a manual trigger),
 committing and pushing any resulting changes under `data/` and
 `docs/graph.json` as the `github-actions[bot]` user. The script re-fetches
 only the current term and the one right after it (via
@@ -68,6 +68,13 @@ scraped data from going stale between manual runs, and is why a future
 term (e.g. `data/2027 Spring/`) can already exist as a real, committed
 folder with zero course records: JHU hasn't published that term's sections
 yet, and the weekly run will pick them up once it does.
+
+If the refresh step fails (e.g. a scraping error logged to
+`logs/fetch_courses.log` — see above), the workflow uploads that log as a
+build artifact (`fetch-courses-log`, via `actions/upload-artifact`, only
+if the file exists) before stopping — the job never reaches the commit/push
+step on failure, so this is the only way to retrieve the traceback without
+re-running the script locally.
 
 Note this is independent of the visualizer's default term filter
 (`computeDefaultTerm()` in `docs/js/course-utils.js`), which only ever
@@ -107,6 +114,11 @@ ahead of time doesn't change what term the visualizer opens to by default.
   exists and prompts to confirm overwrite (bypass with `--yes`/`-y`). This
   check happens *before* the Typesense call, so declining doesn't waste a
   request.
+- If the configuration or search request fails (network error, bad
+  response, etc.), the script appends a timestamped entry with a traceback
+  to `logs/fetch_courses.log` (gitignored, created on first error) and
+  exits with status 1, rather than dumping a bare traceback and leaving no
+  record for the unattended weekly run to be debugged from later.
 - Default query scope is school `Whiting School of Engineering`, department
   `EN Applied Mathematics & Statistics`; override with `--school`/
   `--department` to scrape other JHU departments with the same script.

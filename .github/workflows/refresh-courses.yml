@@ -24,6 +24,14 @@ jobs:
       - name: Refresh current + next term data
         run: python3 scripts/refresh_terms.py
 
+      - name: Upload scrape error log
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fetch-courses-log
+          path: logs/fetch_courses.log
+          if-no-files-found: ignore
+
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
