@@ -135,7 +135,7 @@ ahead of time doesn't change what term the visualizer opens to by default.
   response, etc.), the script appends a timestamped entry with a traceback
   to `logs/fetch_courses.log` (gitignored, created on first error) and
   exits with status 1, rather than dumping a bare traceback and leaving no
-  record for the unattended weekly run to be debugged from later.
+  record for the unattended daily run to be debugged from later.
 - Default query scope is school `Whiting School of Engineering`, department
   `EN Applied Mathematics & Statistics`; override with `--school`/
   `--department` to scrape other JHU departments with the same script.

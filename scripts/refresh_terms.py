@@ -16,7 +16,7 @@ next_term() — the same functions fetch_courses.py itself uses to default
 its interactive prompt, kept as the one source of truth so this script and
 a bare `fetch_courses.py` run never disagree on what "current" means. JHU's
 actual registration windows don't align exactly to calendar-year halves,
-but since this runs weekly the heuristic self-corrects over time.
+but since this runs daily the heuristic self-corrects over time.
 
 `data/*/courses.json` and `courses.csv` are gitignored (see .gitignore) so
 the current/next term's daily-changing files don't add a commit's worth of
