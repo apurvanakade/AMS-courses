@@ -55,19 +55,36 @@ no bundler.
 ## Automated refresh
 
 `.github/workflows/refresh-courses.yml` runs `scripts/refresh_terms.py`
-daily (03:00 UTC, plus `workflow_dispatch` for a manual trigger),
-committing and pushing any resulting changes under `data/` and
-`docs/graph.json` as the `github-actions[bot]` user. The script re-fetches
-only the current term and the one right after it (via
-`fetch_courses.current_term()`/`next_term()` — the same functions
-`fetch_courses.py` uses to default its own interactive prompt, so the
-script and a bare manual run never disagree on what "current" means), then
-reruns `build_database.py`. It intentionally does not touch older terms —
-those are historical record and don't change. This is what keeps the
+daily (03:00 UTC, plus `workflow_dispatch` for a manual trigger) as the
+`github-actions[bot]` user. The script re-fetches only the current term and
+the one right after it (via `fetch_courses.current_term()`/`next_term()` —
+the same functions `fetch_courses.py` uses to default its own interactive
+prompt, so the script and a bare manual run never disagree on what
+"current" means), then reruns `build_database.py`. This is what keeps the
 scraped data from going stale between manual runs, and is why a future
 term (e.g. `data/2027 Spring/`) can already exist as a real, committed
 folder with zero course records: JHU hasn't published that term's sections
-yet, and the weekly run will pick them up once it does.
+yet, and the daily run will pick them up once it does.
+
+`data/*/courses.json`, `courses.csv`, and `docs/graph.json` are gitignored
+(see "Data layout" and `docs/graph.json` below) precisely because this
+workflow would otherwise touch them every single day — a new commit's
+worth of git history for data about to be overwritten again tomorrow. So
+the workflow doesn't unconditionally `git add` them; instead
+`scripts/refresh_terms.py`'s `archive_stale_terms()` force-adds a term's
+files the one time it ages out of the current/next window (i.e. the day
+`current_term()`/`next_term()` stop returning it), giving it exactly one
+permanent commit as its historical-record snapshot. The workflow's
+commit/push step only fires when that staged something (or a human
+committed scraper-code changes) — routine day-to-day refreshes of the
+still-active current/next term produce no commit at all. Older, already-
+archived terms are untouched on every run (force-adding an unchanged file
+is a no-op).
+
+`docs/graph.json` itself is never committed at all, even once — GitHub
+Pages is configured to deploy from this workflow's build artifact (see the
+`docs/` section below), not from a committed file, so there's no need to
+ever track it in git.
 
 If the refresh step fails (e.g. a scraping error logged to
 `logs/fetch_courses.log` — see above), the workflow uploads that log as a
@@ -126,8 +143,12 @@ ahead of time doesn't change what term the visualizer opens to by default.
 ## Data layout
 
 `data/<Year> <Season>/` holds one `courses.json` + `courses.csv` pair per
-term already fetched (e.g. `data/2023 Spring/`, `data/2026 Fall/`). These are
-committed to the repo as a historical record, not regenerated on every run.
+term already fetched (e.g. `data/2023 Spring/`, `data/2026 Fall/`). Once a
+term is no longer the current or next one, its pair is committed to the
+repo as a permanent historical record. The current and next term are the
+exception — their files are gitignored and rebuilt fresh by the daily
+refresh instead of committed on every run; see "Automated refresh" above
+for how and when they eventually do get committed.
 
 ## build_database.py
 
@@ -219,7 +240,7 @@ Two outputs, both fully reproducible by re-running the script:
   `ordered_building()` rebuilds it instead from the per-meeting
   `SectionDetails.Meetings` list, which carries a `Building` alongside each
   entry in the same order `Meetings` was built from.
-- `docs/graph.json` (committed) — a nodes/edges flattening of the same data
+- `docs/graph.json` (gitignored) — a nodes/edges flattening of the same data
   for `docs/index.html` to fetch directly; no server-side build step. Each
   node's `sections` array mirrors `course_sections` (term, section,
   instructors, syllabus_url, enrollment, meetings, building) and is
@@ -282,7 +303,12 @@ exclusive). There is no physics simulation —
 positions are computed once at load and never move on their own; the only
 interactivity is pan/zoom/click.
 
-This folder doubles as the GitHub Pages source (repo Settings → Pages →
-Deploy from branch → `/docs`), so `graph.json` must stay committed even
-though it's a build artifact — unlike `db/courses.db`, which is gitignored.
-Regenerate both with `python3 build_database.py` after re-scraping a term.
+This folder is the GitHub Pages source, but via an Actions-based deploy
+(repo Settings → Pages → Source → GitHub Actions) rather than serving the
+branch's `docs/` folder directly: `.github/workflows/refresh-courses.yml`
+rebuilds `graph.json` on every run and publishes the whole `docs/` folder
+as a Pages artifact (`actions/upload-pages-artifact` +
+`actions/deploy-pages`), so `graph.json` never needs to be committed — it
+and `db/courses.db` are both gitignored. Regenerate both locally with
+`python3 build_database.py` after re-scraping a term (the live site only
+picks up local changes once pushed and the workflow runs).

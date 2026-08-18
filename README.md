@@ -56,20 +56,27 @@ matching the term you queried — override with `--out-dir`:
 If either file already exists, you'll be asked to confirm before it's
 overwritten. Pass `--yes`/`-y` to skip the prompt (e.g. in scripts).
 
-Scraped terms already in the repo live under `data/` and are committed as a
-historical record. The current term and the one after it are the exception:
-a scheduled job keeps those two refreshed automatically (see "Automated
-refresh" below); everything older is static and won't change unless you
-rescrape it by hand.
+Scraped terms already in the repo live under `data/`. Once a term is no
+longer the current or next one, it's committed as a permanent historical
+record. The current term and the one after it are the exception: a
+scheduled job re-fetches those two daily (see "Automated refresh" below),
+so their `courses.json`/`courses.csv` are gitignored rather than committed
+— otherwise every refresh would add a new commit's worth of git history for
+data that's about to be overwritten again the next day. Everything older
+is static and won't change unless you rescrape it by hand.
 
 ## Automated refresh
 
 A GitHub Actions workflow (`.github/workflows/refresh-courses.yml`) runs
-`scripts/refresh_terms.py` weekly, re-scraping only the current term and
-the one right after it, rebuilding the database, and pushing any resulting
-changes. This is why a not-yet-published future term can already have a
-`data/<Year> <Season>/` folder in the repo with zero courses in it — the
-job will pick up real data automatically once JHU publishes that term.
+`scripts/refresh_terms.py` daily, re-scraping only the current term and
+the one right after it and rebuilding the database. It only pushes a commit
+when there's something worth keeping: when a term ages out of the
+current/next window, the script force-adds its (now-final) files as a
+one-time historical-record commit; day-to-day refreshes of the still-active
+current/next term produce no commit at all. This is why a not-yet-published
+future term can already have a `data/<Year> <Season>/` folder in the repo
+with zero courses in it — the job will pick up real data automatically once
+JHU publishes that term, and archive it once it's no longer current/next.
 Run it by hand with `python3 scripts/refresh_terms.py`, or trigger the
 workflow manually from the Actions tab.
 
@@ -108,7 +115,8 @@ of the two numbers.
 Writes two outputs, both fully reproducible by re-running the script:
 
 - `db/courses.db` (SQLite, gitignored) — the queryable source of truth
-- `docs/graph.json` (committed) — a nodes/edges export for the visualizer
+- `docs/graph.json` (gitignored) — a nodes/edges export for the visualizer,
+  rebuilt and deployed fresh by the refresh workflow rather than committed
 
 Run this again after scraping a new term to pick it up.
 
@@ -128,13 +136,17 @@ sits in the "300s" column) and encodes relationship type in edge style
 click a node for details.
 
 This is also the published site, via GitHub Pages (`Settings → Pages →
-Deploy from branch → /docs`).
+Source → GitHub Actions`). The refresh workflow rebuilds `docs/graph.json`
+and deploys the whole `docs/` folder as a Pages artifact on every run
+(`actions/upload-pages-artifact` + `actions/deploy-pages`), so the live
+site stays current even though `graph.json` itself is never committed.
 
 ## File map
 
 `docs/index.html` is the HTML shell, `docs/css/*.css` are plain `<link>`
 stylesheets (theme, base, header, graph, panel, loading), and
-`docs/graph.json` is the committed build artifact the visualizer fetches.
+`docs/graph.json` is the gitignored build artifact the visualizer fetches
+(rebuilt and deployed by the refresh workflow, not committed).
 The JS modules under `docs/js/` are native ES modules; the diagram below
 shows who imports whom, rooted at `main.js` (the `<script type="module">`
 entry point). Kept in sync with `docs/js/` — update whenever a module is

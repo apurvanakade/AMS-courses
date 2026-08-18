@@ -17,6 +17,16 @@ its interactive prompt, kept as the one source of truth so this script and
 a bare `fetch_courses.py` run never disagree on what "current" means. JHU's
 actual registration windows don't align exactly to calendar-year halves,
 but since this runs weekly the heuristic self-corrects over time.
+
+`data/*/courses.json` and `courses.csv` are gitignored (see .gitignore) so
+the current/next term's daily-changing files don't add a commit's worth of
+git history every single run. Once a term ages out of the current/next
+window — this script no longer refetches it — `archive_stale_terms()`
+below force-adds its files on the first run after the transition, giving
+it exactly one permanent commit that locks in its final state as the
+historical record described in CLAUDE.md. Older terms that are already
+archived this way are untouched (force-adding an unchanged file is a
+no-op).
 """
 
 import subprocess
@@ -28,6 +38,22 @@ sys.path.insert(0, str(REPO_ROOT))
 
 from fetch_courses import current_term as get_current_term  # noqa: E402
 from fetch_courses import next_term as get_next_term  # noqa: E402
+from fetch_courses import term_to_folder  # noqa: E402
+
+
+def archive_stale_terms(current_term: str, next_term: str) -> None:
+    """Force-add any data/ term folder that is no longer current or next."""
+    active_folders = {term_to_folder(current_term), term_to_folder(next_term)}
+    data_dir = REPO_ROOT / "data"
+    for folder in sorted(data_dir.iterdir()):
+        if not folder.is_dir():
+            continue
+        if str(folder.relative_to(REPO_ROOT)) in active_folders:
+            continue
+        for name in ("courses.json", "courses.csv"):
+            path = folder / name
+            if path.exists():
+                subprocess.run(["git", "add", "-f", str(path)], cwd=REPO_ROOT, check=True)
 
 
 def main() -> int:
@@ -43,6 +69,7 @@ def main() -> int:
         )
 
     subprocess.run([sys.executable, "build_database.py"], cwd=REPO_ROOT, check=True)
+    archive_stale_terms(current_term, next_term)
     return 0
 
 

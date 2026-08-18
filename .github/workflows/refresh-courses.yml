@@ -7,6 +7,12 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   refresh:
@@ -32,14 +38,39 @@ jobs:
           path: logs/fetch_courses.log
           if-no-files-found: ignore
 
+      # data/*/courses.json, courses.csv, and docs/graph.json are gitignored
+      # (see .gitignore) — they'd otherwise pick up a new commit every single
+      # run. scripts/refresh_terms.py already force-adds a term's files the
+      # one time it ages out of the current/next window, so anything staged
+      # here is that one-time historical-archive commit, not daily churn.
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/ docs/graph.json
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
             git commit -m "Refresh course data ($(date -u +%Y-%m-%d))"
             git push
           fi
+
+      # docs/graph.json is rebuilt fresh above but never committed (see
+      # .gitignore) — GitHub Pages is configured to deploy from this
+      # workflow's artifact instead of from the docs/ folder in git, so the
+      # live visualizer still gets today's data without it ever touching
+      # git history.
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/
+
+  deploy:
+    needs: refresh
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

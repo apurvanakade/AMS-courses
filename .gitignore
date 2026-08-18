@@ -3,3 +3,6 @@ __pycache__/
 db/
 logs/
 .DS_Store
+docs/graph.json
+data/*/courses.json
+data/*/courses.csv
