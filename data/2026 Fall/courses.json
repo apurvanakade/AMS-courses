@@ -53,7 +53,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867692",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "25/60",
+    "SeatsAvailable": "22/60",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -4516,7 +4516,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Department Seminar",
     "UGradPHStudies": "No",
-    "Waitlisted": "2",
+    "Waitlisted": "3",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "867085"
@@ -8664,7 +8664,7 @@
     "Repeatable": "Y",
     "SSS_SectionsID": "867229",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "10/10",
+    "SeatsAvailable": "9/10",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -10782,7 +10782,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867649",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "6/25",
+    "SeatsAvailable": "7/25",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -10996,7 +10996,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Machine Learning I",
     "UGradPHStudies": "No",
-    "Waitlisted": "15",
+    "Waitlisted": "16",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "867084"
@@ -11055,7 +11055,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "880924",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "1/30",
+    "SeatsAvailable": "0/30",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -11132,7 +11132,7 @@
     "TimeOfDay": "Other",
     "Title": "Large Language Models: Foundations and Algorithms",
     "UGradPHStudies": "No",
-    "Waitlisted": "20",
+    "Waitlisted": "19",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "880924"
@@ -11335,7 +11335,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867076",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "11/39",
+    "SeatsAvailable": "12/39",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -11817,7 +11817,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867075",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "5/39",
+    "SeatsAvailable": "3/39",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -12126,7 +12126,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "880908",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "0/14",
+    "SeatsAvailable": "1/14",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -12759,7 +12759,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867581",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "1/10",
+    "SeatsAvailable": "0/10",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -12831,7 +12831,7 @@
     "SectionRegRestrictions": "",
     "SelfSearch": "Y",
     "StartTime": 1330,
-    "Status": "Open",
+    "Status": "Waitlist Only",
     "SubDepartment": "",
     "Syllabus_Url": "https://assessment.jhu.edu/index.cfm/page/AefisCourseSection.publicSyllabus?courseSectionId=148751",
     "Term": "Fall 2026",
@@ -13064,7 +13064,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867069",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "1/42",
+    "SeatsAvailable": "0/42",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -13142,7 +13142,7 @@
     "SectionRegRestrictions": "",
     "SelfSearch": "Y",
     "StartTime": 1200,
-    "Status": "Reserved Open",
+    "Status": "Waitlist Only",
     "SubDepartment": "",
     "Syllabus_Url": "https://assessment.jhu.edu/index.cfm/page/AefisCourseSection.publicSyllabus?courseSectionId=123372",
     "Term": "Fall 2026",
@@ -13940,7 +13940,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867000",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "12/20",
+    "SeatsAvailable": "11/20",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -14193,7 +14193,7 @@
     "TimeOfDay": "Other",
     "Title": "Risk Measurement/Management in Financial Markets",
     "UGradPHStudies": "No",
-    "Waitlisted": "2",
+    "Waitlisted": "3",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "866999"
@@ -14438,7 +14438,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866996",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "25/30",
+    "SeatsAvailable": "24/30",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -16061,7 +16061,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866985",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "2/24",
+    "SeatsAvailable": "1/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -16224,7 +16224,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866984",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "1/24",
+    "SeatsAvailable": "0/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -16304,7 +16304,7 @@
     "SectionRegRestrictions": "",
     "SelfSearch": "Y",
     "StartTime": 1200,
-    "Status": "Reserved Open",
+    "Status": "Waitlist Only",
     "SubDepartment": "",
     "Syllabus_Url": "https://assessment.jhu.edu/index.cfm/page/AefisCourseSection.publicSyllabus?courseSectionId=123347",
     "Term": "Fall 2026",
@@ -16316,7 +16316,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Introduction to Data Science",
     "UGradPHStudies": "No",
-    "Waitlisted": "3",
+    "Waitlisted": "2",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "866984"
@@ -16740,7 +16740,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866980",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "3/40",
+    "SeatsAvailable": "2/40",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -16910,7 +16910,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867006",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "2/30",
+    "SeatsAvailable": "3/30",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -17073,7 +17073,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867005",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "0/30",
+    "SeatsAvailable": "1/30",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -17153,7 +17153,7 @@
     "SectionRegRestrictions": "",
     "SelfSearch": "Y",
     "StartTime": 1630,
-    "Status": "Waitlist Only",
+    "Status": "Reserved Open",
     "SubDepartment": "",
     "Syllabus_Url": "https://assessment.jhu.edu/index.cfm/page/AefisCourseSection.publicSyllabus?courseSectionId=123340",
     "Term": "Fall 2026",
@@ -17590,7 +17590,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866976",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "1/24",
+    "SeatsAvailable": "0/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -17685,7 +17685,7 @@
     "SectionRegRestrictions": "",
     "SelfSearch": "Y",
     "StartTime": 900,
-    "Status": "Reserved Open",
+    "Status": "Waitlist Only",
     "SubDepartment": "",
     "Syllabus_Url": "https://assessment.jhu.edu/index.cfm/page/AefisCourseSection.publicSyllabus?courseSectionId=123335",
     "Term": "Fall 2026",
@@ -21642,7 +21642,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866963",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "3/15",
+    "SeatsAvailable": "4/15",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -22557,7 +22557,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866959",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "18/24",
+    "SeatsAvailable": "17/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -24956,7 +24956,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Honors Probability",
     "UGradPHStudies": "No",
-    "Waitlisted": "5",
+    "Waitlisted": "4",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "867064"
@@ -25343,7 +25343,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866955",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "12/24",
+    "SeatsAvailable": "13/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -25939,7 +25939,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866953",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "7/24",
+    "SeatsAvailable": "8/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -28048,7 +28048,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866946",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "0/24",
+    "SeatsAvailable": "1/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -28211,7 +28211,7 @@
     "SectionRegRestrictions": "",
     "SelfSearch": "Y",
     "StartTime": 1000,
-    "Status": "Waitlist Only",
+    "Status": "Open",
     "SubDepartment": "",
     "Syllabus_Url": "https://assessment.jhu.edu/index.cfm/page/AefisCourseSection.publicSyllabus?courseSectionId=123266",
     "Term": "Fall 2026",
@@ -28808,7 +28808,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866943",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "15/24",
+    "SeatsAvailable": "16/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -30008,7 +30008,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866938",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "0/24",
+    "SeatsAvailable": "1/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -30155,7 +30155,7 @@
     "SectionRegRestrictions": "",
     "SelfSearch": "Y",
     "StartTime": 1000,
-    "Status": "Waitlist Only",
+    "Status": "Open",
     "SubDepartment": "",
     "Syllabus_Url": "https://assessment.jhu.edu/index.cfm/page/AefisCourseSection.publicSyllabus?courseSectionId=123261",
     "Term": "Fall 2026",
@@ -30675,7 +30675,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867660",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "0/24",
+    "SeatsAvailable": "1/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -30773,7 +30773,7 @@
     "SectionRegRestrictions": "",
     "SelfSearch": "Y",
     "StartTime": 1330,
-    "Status": "Waitlist Only",
+    "Status": "Open",
     "SubDepartment": "",
     "Syllabus_Url": "https://assessment.jhu.edu/index.cfm/page/AefisCourse.publicSyllabus?courseid=17628",
     "Term": "Fall 2026",
@@ -30866,7 +30866,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866935",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "19/24",
+    "SeatsAvailable": "20/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -31100,7 +31100,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866934",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "13/24",
+    "SeatsAvailable": "14/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -33879,7 +33879,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "867007",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "0/24",
+    "SeatsAvailable": "1/24",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -35074,7 +35074,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "866923",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "1/18",
+    "SeatsAvailable": "2/18",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -36074,7 +36074,7 @@
       "CoRequisites": [],
       "CreditType": "",
       "Credits": "3.00",
-      "CrossListed": "N",
+      "CrossListed": "Y",
       "DepartmentID": "50,376,423,39,40,41,42,43,46,47",
       "Departments": "EN General Engineering, EN Applied Mathematics & Statistics, EN Biomedical Engineering, EN Chemical & Biomolecular Engineering     , EN Civil and Systems Engineering, EN Computer Science, EN Electrical & Computer Engineering, EN Environmental Health and Engineering, EN Materials Science & Engineering, EN Mechanical Engineering",
       "Description": "This course introduces fundamental programming concepts and techniques, and is intended for all who plan to develop computational artifacts or intelligently deploy computational tools in their studies and careers. Topics covered include the design and implementation of algorithms using variables, control structures, arrays, functions, files, testing, debugging, and structured program design. Elements of object-oriented programming. algorithmic efficiency and data visualization are also introduced. Students deploy programming to develop working solutions that address problems in engineering, science and other areas of contemporary interest that vary from section to section. Course homework involves significant programming. Attendance and participation in class sessions are expected.",
@@ -36275,7 +36275,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "892979",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "2/19",
+    "SeatsAvailable": "1/19",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -36604,7 +36604,7 @@
     "TimeOfDay": "Afternoon",
     "Title": "Gateway Computing: Python",
     "UGradPHStudies": "No",
-    "Waitlisted": "11",
+    "Waitlisted": "9",
     "ZoneName": "ASEN - UGrad",
     "ZonesId": 5,
     "id": "880580"
@@ -36893,7 +36893,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "865878",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "0/19",
+    "SeatsAvailable": "1/19",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -37305,7 +37305,7 @@
     "Repeatable": "N",
     "SSS_SectionsID": "865876",
     "SchoolName": "Whiting School of Engineering",
-    "SeatsAvailable": "1/19",
+    "SeatsAvailable": "0/19",
     "SectionDetails": {
       "CoRequisites": [],
       "CreditType": "",
@@ -37416,7 +37416,7 @@
     "SectionRegRestrictions": "",
     "SelfSearch": "Y",
     "StartTime": 1300,
-    "Status": "Open",
+    "Status": "Waitlist Only",
     "SubDepartment": "",
     "Syllabus_Url": "https://assessment.jhu.edu/index.cfm/page/AefisCourseSection.publicSyllabus?courseSectionId=122189",
     "Term": "Fall 2026",
