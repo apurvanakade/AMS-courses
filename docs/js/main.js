@@ -39,8 +39,13 @@ function init(g) {
 
   if (g.generated_at) {
     const d = new Date(g.generated_at);
+    // Pinned to UTC, not the browser's local timezone: generated_at is
+    // written in UTC (see build_database.py) and the refresh workflow's
+    // commit messages date themselves in UTC too, so this keeps all three
+    // agreeing instead of drifting a calendar day apart for anyone west of
+    // UTC when the 03:00 UTC run lands on the previous local evening.
     lastUpdatedEl.textContent = isNaN(d) ? "" :
-      "Updated " + d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+      "Updated " + d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });
   }
 
   populateTermOptions();
