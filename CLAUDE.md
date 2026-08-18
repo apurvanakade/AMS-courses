@@ -55,8 +55,12 @@ no bundler.
 ## Automated refresh
 
 `.github/workflows/refresh-courses.yml` runs `scripts/refresh_terms.py`
-daily (03:00 UTC, plus `workflow_dispatch` for a manual trigger) as the
-`github-actions[bot]` user. The script re-fetches only the current term and
+daily (03:00 UTC, plus `workflow_dispatch` for a manual trigger, and a
+`push`-to-`main` trigger scoped to `docs/**`, `fetch_courses.py`,
+`build_database.py`, `scripts/**`, and the workflow file itself — so
+changes to the site or the pipeline redeploy immediately instead of
+waiting for the next scheduled run; unrelated pushes, e.g. README-only
+edits, don't trigger it) as the `github-actions[bot]` user. The script re-fetches only the current term and
 the one right after it (via `fetch_courses.current_term()`/`next_term()` —
 the same functions `fetch_courses.py` uses to default its own interactive
 prompt, so the script and a bare manual run never disagree on what
