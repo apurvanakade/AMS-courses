@@ -2,7 +2,10 @@ name: Refresh course data
 
 on:
   schedule:
-    - cron: '0 3 * * *'    # daily 03:00 UTC — adjust if a different time is preferred
+    # daily 06:00 UTC = 2am Eastern Daylight Time. Cron is fixed UTC with no
+    # DST awareness, so this drifts to 1am Eastern Standard Time in winter
+    # (~Nov-Mar) — chosen over 07:00 UTC since EDT covers more of the year.
+    - cron: '0 6 * * *'
   workflow_dispatch:
   push:
     branches: [main]

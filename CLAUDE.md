@@ -55,7 +55,9 @@ no bundler.
 ## Automated refresh
 
 `.github/workflows/refresh-courses.yml` runs `scripts/refresh_terms.py`
-daily (03:00 UTC, plus `workflow_dispatch` for a manual trigger, and a
+daily (06:00 UTC — 2am Eastern Daylight Time, drifting to 1am Eastern
+Standard Time in winter since cron has no DST awareness — plus
+`workflow_dispatch` for a manual trigger, and a
 `push`-to-`main` trigger scoped to `docs/**`, `fetch_courses.py`,
 `build_database.py`, `scripts/**`, and the workflow file itself — so
 changes to the site or the pipeline redeploy immediately instead of
