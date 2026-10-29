@@ -44,10 +44,15 @@ export function seasonOnlyOf(n) {
   return seasons.size === 1 ? [...seasons][0] : null;
 }
 
-// Mirrors the Jan-Jun -> Spring / Jul-Dec -> Fall heuristic in
-// scripts/refresh_terms.py, so the default view always tracks "now"
-// instead of going stale as a hardcoded term would.
-export function computeDefaultTerm() {
+// The visualizer's default term: the latest term with any courses in the
+// loaded graph (allTerms is sorted oldest-first and only ever contains
+// terms with at least one scraped section). This advances to the next term
+// on its own as soon as JHU publishes that term's roster and the daily
+// refresh picks it up, rather than waiting for the calendar to roll over.
+// Falls back to the Jan-Jun -> Spring / Jul-Dec -> Fall date heuristic
+// (mirroring fetch_courses.current_term()) only if no terms are loaded.
+export function computeDefaultTerm(allTerms = []) {
+  if (allTerms.length) return allTerms[allTerms.length - 1];
   const now = new Date();
   const year = now.getFullYear();
   const month = now.getMonth() + 1; // 1-12

@@ -99,10 +99,14 @@ if the file exists) before stopping — the job never reaches the commit/push
 step on failure, so this is the only way to retrieve the traceback without
 re-running the script locally.
 
-Note this is independent of the visualizer's default term filter
-(`computeDefaultTerm()` in `docs/js/course-utils.js`), which only ever
-resolves to the *current* term, never the next one — so scraping one term
-ahead of time doesn't change what term the visualizer opens to by default.
+The visualizer's default term filter (`computeDefaultTerm()` in
+`docs/js/course-utils.js`) is *not* date-based: it opens to the latest term
+in `graph.json` with at least one section (falling back to the date rule
+only if no terms load). So once JHU publishes the next term's roster and
+the daily run scrapes it, the visualizer's landing view advances to that
+term automatically — e.g. Spring 2027 becomes the default in late October
+2026 even though `current_term()` still says Fall 2026 (which must stay
+current so the refresh keeps updating it).
 
 ## Architecture
 
@@ -123,11 +127,11 @@ ahead of time doesn't change what term the visualizer opens to by default.
   the script — the API and the file layout use different orderings.
 - `current_term()` guesses the in-progress/upcoming term from today's date
   (Jan–Jun → `Spring {year}`, Jul–Dec → `Fall {year}`) and is used as the
-  prompt's default when `--term` is omitted (blank input accepts it). It
-  mirrors `computeDefaultTerm()` in `docs/js/course-utils.js` so a bare
-  `fetch_courses.py` run scrapes the same term the visualizer opens to by
-  default — but the two are only kept in sync by convention, not by a
-  shared source, so update both if the rule ever changes.
+  prompt's default when `--term` is omitted (blank input accepts it), and
+  by `scripts/refresh_terms.py` to pick which terms to refresh. The
+  visualizer's `computeDefaultTerm()` uses the same date rule only as a
+  fallback (see "Automated refresh" above), so the two can intentionally
+  disagree once the next term's roster is published.
 - Output per term is a pair of files in that folder: `courses.json` (the raw
   list of Typesense section documents, one per section — each includes a
   nested `SectionDetails` object with `Prerequisites`, `Restrictions`,

@@ -13,8 +13,6 @@ import { centerOn } from "./camera.js";
 import { draw } from "./render.js";
 import { selectNode, deselect } from "./panel.js";
 
-const DEFAULT_TERM = computeDefaultTerm();
-
 const statusEl = document.getElementById("status");
 const searchInput = document.getElementById("search");
 const searchWrap = document.querySelector(".search-wrap");
@@ -45,7 +43,7 @@ function restoreFromParams(params) {
   const highlight = params.get("highlight");
   store.highlight = new Set(highlight ? highlight.split(",").filter(Boolean) : ["new", "season", "other"]);
   const term = params.get("term");
-  store.term = store.allTerms.includes(term) ? term : DEFAULT_TERM;
+  store.term = store.allTerms.includes(term) ? term : computeDefaultTerm(store.allTerms);
   store.showStubs = params.get("external") === "1";
 
   document.querySelectorAll("#degreeLegend .chip[data-degree]").forEach(chip => {

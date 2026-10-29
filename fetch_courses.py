@@ -59,10 +59,11 @@ def term_to_folder(term: str) -> str:
 def current_term() -> str:
     """Guess the in-progress/upcoming academic term from today's date.
 
-    Mirrors computeDefaultTerm() in docs/js/course-utils.js, which the
-    visualizer uses to pick its default term filter — kept in sync so a
-    bare `fetch_courses.py` run scrapes the same term the visualizer shows
-    by default.
+    Drives which terms scripts/refresh_terms.py keeps refreshing. The
+    visualizer's default term (computeDefaultTerm() in
+    docs/js/course-utils.js) uses this same date rule only as a fallback;
+    it otherwise opens to the latest term with published sections, which
+    can be next_term() of this once JHU posts that roster.
     """
     today = datetime.date.today()
     season = "Spring" if 1 <= today.month <= 6 else "Fall"
