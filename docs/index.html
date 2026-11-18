@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="css/graph.css">
 <link rel="stylesheet" href="css/panel.css">
 <link rel="stylesheet" href="css/loading.css">
+<link rel="stylesheet" href="css/mobile-warning.css">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="34230be4-ff39-419b-b70e-8ffc88c4daf1"></script>
 </head>
 <body>
@@ -30,16 +31,18 @@
   <div class="filters hideable">
     <div class="filter-group" id="degreeLegend">
       <span class="label">Level</span>
-      <label class="chip active" data-degree="Undergraduate">
-        <input type="checkbox" checked>
-        <span class="dot" style="background:hsl(213,68%,50%)"></span>
-        <span>Undergraduate</span>
-      </label>
-      <label class="chip" data-degree="Graduate">
-        <input type="checkbox">
-        <span class="dot" style="background:hsl(152,45%,40%)"></span>
-        <span>Graduate</span>
-      </label>
+      <span class="segmented" role="radiogroup" aria-label="Level">
+        <label class="chip active" data-degree="Undergraduate">
+          <input type="radio" name="degree" value="Undergraduate" checked>
+          <span class="dot" style="background:hsl(213,68%,50%)"></span>
+          <span>Undergraduate</span>
+        </label>
+        <label class="chip" data-degree="Graduate">
+          <input type="radio" name="degree" value="Graduate">
+          <span class="dot" style="background:hsl(152,45%,40%)"></span>
+          <span>Graduate</span>
+        </label>
+      </span>
     </div>
 
     <div class="filter-group">

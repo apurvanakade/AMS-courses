@@ -131,9 +131,11 @@ open, since it fetches `graph.json`).
 
 `docs/index.html` is a single self-contained file — no dependencies, no
 build step. It lays out one column per course level (e.g. `EN.553.310`
-sits in the "300s" column) and encodes relationship type in edge style
-(solid+arrow = prerequisite, dashed = mutually exclusive). Pan, zoom, and
-click a node for details.
+sits in the "300s" column), places each course beside the courses it
+connects to, and encodes relationship type in edge style (solid+arrow =
+prerequisite, dashed = mutually exclusive). Level is an
+Undergraduate | Graduate toggle. Pan, zoom, and click a node for details.
+It is designed for wide screens; below 992px a one-time notice says so.
 
 This is also the published site, via GitHub Pages (`Settings → Pages →
 Source → GitHub Actions`). The refresh workflow rebuilds `docs/graph.json`
@@ -144,7 +146,7 @@ site stays current even though `graph.json` itself is never committed.
 ## File map
 
 `docs/index.html` is the HTML shell, `docs/css/*.css` are plain `<link>`
-stylesheets (theme, base, header, graph, panel, loading), and
+stylesheets (theme, base, header, graph, panel, loading, mobile-warning), and
 `docs/graph.json` is the gitignored build artifact the visualizer fetches
 (rebuilt and deployed by the refresh workflow, not committed).
 The JS modules under `docs/js/` are native ES modules; the diagram below
@@ -163,8 +165,9 @@ graph TD
     camera["camera.js<br/>Pan/zoom/resize + pointer/wheel wiring"]
     panel["panel.js<br/>Detail side panel DOM + drag-to-resize handle"]
     filters["filters.js<br/>Filter state, URL round-trip, filter controls DOM"]
-    layout["layout.js<br/>Static layered layout (barycenter sweep)"]
-    courseUtils["course-utils.js<br/>Pure term/course-code helpers"]
+    layout["layout.js<br/>Static layered layout (barycenter order, connection-based y, label-sized columns)"]
+    mobileWarning["mobile-warning.js<br/>One-time small-screen notice"]
+    courseUtils["course-utils.js<br/>Pure term/course-code/label-text helpers"]
     constants["constants.js<br/>Static lookup tables"]
 
     main --> store
@@ -175,10 +178,12 @@ graph TD
     main --> camera
     main --> panel
     main --> filters
+    main --> mobileWarning
 
     camera --> store
     camera --> render
     camera --> tooltip
+    camera --> constants
 
     filters --> store
     filters --> courseUtils
@@ -190,10 +195,12 @@ graph TD
     layout --> store
     layout --> constants
     layout --> camera
+    layout --> courseUtils
 
     render --> store
     render --> constants
     render --> theme
+    render --> courseUtils
 
     panel --> store
     panel --> constants

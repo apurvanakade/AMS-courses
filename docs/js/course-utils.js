@@ -58,3 +58,11 @@ export function computeDefaultTerm(allTerms = []) {
   const month = now.getMonth() + 1; // 1-12
   return (month >= 1 && month <= 6) ? `Spring ${year}` : `Fall ${year}`;
 }
+
+// A course title cut to `max` characters with an ellipsis. Shared by
+// layout.js (to measure column widths) and render.js (to draw labels), so
+// both agree on exactly what text a label shows.
+export function truncate(text, max) {
+  if (!text) return "";
+  return text.length > max ? text.slice(0, max - 1) + "…" : text;
+}

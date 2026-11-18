@@ -3,7 +3,8 @@
 // whatever's in `store`, so it's cheap and only runs again on interaction.
 
 import { store } from "./store.js";
-import { LEVEL_LABEL, EDGE_STYLE, DEGREE_HUE, COMBINED_HUE, COLUMN_WIDTH } from "./constants.js";
+import { LEVEL_LABEL, EDGE_STYLE, DEGREE_HUE, COMBINED_HUE, LABEL_FONT, TITLE_MAX_CHARS } from "./constants.js";
+import { truncate } from "./course-utils.js";
 import { cssVar, isDarkMode } from "./theme.js";
 
 let canvas, ctx;
@@ -54,9 +55,12 @@ function neighborSet(focusArr) {
   return set;
 }
 
-function truncate(text, max) {
-  if (!text) return "";
-  return text.length > max ? text.slice(0, max - 1) + "…" : text;
+// Header text for a level, e.g. "400s (24)". The count is of currently-
+// visible courses, so a search updates it.
+function headerText(lvl) {
+  const label = LEVEL_LABEL[lvl] || lvl;
+  const shown = store.nodes.filter(n => n.visible && n.col === lvl).length;
+  return `${label} (${shown})`;
 }
 
 export function draw() {
@@ -71,9 +75,7 @@ export function draw() {
   ctx.font = `${12}px system-ui, sans-serif`;
   ctx.fillStyle = cssVar("--muted");
   ctx.textBaseline = "alphabetic";
-  allLevels.forEach((lvl, ci) => {
-    ctx.fillText(LEVEL_LABEL[lvl] || lvl, ci * COLUMN_WIDTH, graphBounds.minY - 4);
-  });
+  for (const lvl of allLevels) ctx.fillText(headerText(lvl), store.levelX[lvl].x0, graphBounds.minY - 4);
 
   const focus = focusNodes();
   const focusIds = new Set(focus.map(n => n.id));
@@ -126,7 +128,6 @@ export function draw() {
   const secColor = cssVar("--text-secondary");
   const selColor = cssVar("--node-selected");
   const newColor = cssVar("--node-new");
-  const titleBudget = Math.max(0, Math.floor((COLUMN_WIDTH - 90) / 6));
 
   for (const n of nodes) {
     if (!n.visible) continue;
@@ -161,7 +162,7 @@ export function draw() {
     ctx.stroke();
     ctx.setLineDash([]);
 
-    ctx.font = `${11}px system-ui, sans-serif`;
+    ctx.font = LABEL_FONT;
     ctx.textBaseline = "middle";
     ctx.fillStyle = n === selected ? selColor : textColor;
     ctx.fillText(n.id, n.x + n.r + 5, n.y);
@@ -169,7 +170,7 @@ export function draw() {
     if (n.title) {
       const codeWidth = ctx.measureText(n.id).width;
       ctx.fillStyle = secColor;
-      ctx.fillText(truncate(n.title, titleBudget), n.x + n.r + 9 + codeWidth, n.y);
+      ctx.fillText(truncate(n.title, TITLE_MAX_CHARS), n.x + n.r + 9 + codeWidth, n.y);
     }
   }
   ctx.globalAlpha = 1;

@@ -65,6 +65,12 @@ header #search {
 }
 .chip.active { color: var(--text-primary); border-color: currentColor; }
 .chip input { display: none; }
+/* Level toggle: two chips joined into one segmented control. */
+.segmented { display: inline-flex; }
+.segmented .chip { margin: 0; }
+.segmented .chip:first-child { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+.segmented .chip:last-child { border-top-left-radius: 0; border-bottom-left-radius: 0; margin-left: -1px; }
+.segmented .chip.active { position: relative; z-index: 1; background: var(--surface-1); }
 .chip.legend-item { cursor: default; border-color: transparent; }
 .chip .swatch { width: 14px; height: 2px; border-radius: 1px; display: inline-block; background: var(--edge-ink); }
 .chip .swatch.dashed { background: none; border-top: 2px dashed var(--edge-ink); height: 0; }

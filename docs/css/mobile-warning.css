@@ -1,0 +1,56 @@
+/* The one-time small-screen notice (js/mobile-warning.js). */
+
+.mobile-warning {
+  position: fixed;
+  z-index: 1080;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.mobile-warning-inner {
+  pointer-events: auto;
+  max-width: 32rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background: var(--surface-1);
+  color: var(--text-primary);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.18);
+}
+
+.mobile-warning-title {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.mobile-warning-text {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.mobile-warning-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.9rem;
+}
+
+.mobile-warning-btn {
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--link);
+  border-radius: 6px;
+  background: var(--link);
+  color: #fff;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mobile-warning-btn:hover { filter: brightness(1.08); }

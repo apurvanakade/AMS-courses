@@ -271,8 +271,9 @@ so nothing needs `npm`/bundling to run — serving `docs/` over `http://`
 - `docs/css/graph.css` — canvas, tooltip, hint/status overlays.
 - `docs/css/panel.css` — the course detail side panel and its section table.
 - `docs/css/loading.css` — the loading/error states shown over the canvas.
+- `docs/css/mobile-warning.css` — the one-time small-screen notice.
 - `docs/js/constants.js` / `course-utils.js` — static lookup tables and pure
-  term/course-code helpers with no shared state.
+  term/course-code/label-text helpers with no shared state.
 - `docs/js/store.js` — the one shared mutable state object (loaded graph,
   camera, current filters, hover/selection/search focus) that every other
   module reads and writes through, plus `buildFromGraph()` which populates
@@ -289,7 +290,11 @@ so nothing needs `npm`/bundling to run — serving `docs/` over `http://`
   controls and filters ribbon down to just the title.
 - `docs/js/panel.js` — the detail side panel's DOM and its resize handle.
 - `docs/js/filters.js` — filter state, the URL query-string round-trip, and
-  the filter controls' DOM wiring.
+  the filter controls' DOM wiring. Level is a one-of toggle
+  (Undergraduate | Graduate); a `level=` URL naming both keeps the first.
+- `docs/js/mobile-warning.js` — a one-time "built for a bigger screen"
+  notice below 992px wide, dismissed for good via localStorage
+  (`ams-mobile-warning-dismissed`).
 - `docs/js/main.js` — entry point; wires the modules together and drives
   the initial `graph.json` fetch.
 
@@ -305,13 +310,21 @@ than importing each other directly where a cycle would otherwise form
 
 The visualizer renders the graph as a **static** layout: one column per
 course level (the course number's hundreds digit, so `EN.553.310` sits in
-the "300s" column), ordered top-to-bottom within each column by a one-time
-barycenter sweep against connected courses to reduce crossings. Node fill
-color encodes level (categorical, one hue per column); edge dash pattern
-encodes relationship type (solid+arrow = prerequisite, dashed = mutually
-exclusive). There is no physics simulation —
-positions are computed once at load and never move on their own; the only
-interactivity is pan/zoom/click.
+the "300s" column), ordered top-to-bottom within each column by a
+barycenter sweep against connected courses to reduce crossings. Each
+course is then placed vertically as close as possible to the mean height
+of its neighbours in other columns, keeping its column's order and a
+one-row gap (an isotonic-regression fit per column, alternating sweeps),
+so a short column sits beside what it connects to rather than at the
+midpoint. Each column is as wide as its widest label (titles cut at
+`TITLE_MAX_CHARS`), and headers show the level's visible-course count,
+e.g. "400s (24)". The initial fit never zooms below `MIN_READABLE_SCALE`;
+when the graph doesn't fit at that zoom it is aligned to the top-left and
+the user pans. Node fill color encodes degree (two hues) with a lightness
+ramp across levels; edge dash pattern encodes relationship type
+(solid+arrow = prerequisite, dashed = mutually exclusive). There is no
+physics simulation — positions are computed once per filter change and
+never move on their own; the only interactivity is pan/zoom/click.
 
 This folder is the GitHub Pages source, but via an Actions-based deploy
 (repo Settings → Pages → Source → GitHub Actions) rather than serving the
