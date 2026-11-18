@@ -5,6 +5,7 @@
 import { store } from "./store.js";
 import { draw } from "./render.js";
 import { showTooltip, hideTooltip } from "./tooltip.js";
+import { MIN_READABLE_SCALE } from "./constants.js";
 
 let canvas, wrap;
 let panning = false;
@@ -39,10 +40,19 @@ export function fitToScreen() {
   const gh = graphBounds.maxY - graphBounds.minY;
   const scale = Math.min(rect.width / gw, rect.height / gh) * 0.94;
   camera.scale = Math.max(0.08, Math.min(2, scale));
+  camera.scale = Math.max(MIN_READABLE_SCALE, camera.scale);
+  // Center each axis the graph fits on; where it doesn't (only possible
+  // after the readability floor), align it to the top/left edge instead
+  // so the user pans right/down from the start of the graph.
+  const pad = 12;
   const gcx = (graphBounds.minX + graphBounds.maxX) / 2;
   const gcy = (graphBounds.minY + graphBounds.maxY) / 2;
-  camera.x = -gcx * camera.scale;
-  camera.y = -gcy * camera.scale;
+  camera.x = gw * camera.scale > rect.width
+    ? pad - rect.width / 2 - graphBounds.minX * camera.scale
+    : -gcx * camera.scale;
+  camera.y = gh * camera.scale > rect.height
+    ? pad - rect.height / 2 - graphBounds.minY * camera.scale
+    : -gcy * camera.scale;
 }
 
 export function centerOn(n, scale) {

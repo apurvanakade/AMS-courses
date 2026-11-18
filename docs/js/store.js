@@ -12,6 +12,8 @@ export const store = {
   allTerms: [],
   allLevels: [],
   graphBounds: { minX: 0, maxX: 1, minY: 0, maxY: 1 },
+  // Per-level column x-extent from layout.js: { x0, x1 }.
+  levelX: {},
 
   // Edges between two currently-visible nodes, irrespective of relationship
   // type — recomputed by applyFilters() whenever the filters change.

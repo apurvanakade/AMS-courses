@@ -11,6 +11,7 @@ import { initTooltip } from "./tooltip.js";
 import { initCamera, resizeCanvas } from "./camera.js";
 import { initPanel, selectNode, deselect } from "./panel.js";
 import { syncURL, initFilterControls, populateTermOptions, initFromLocation } from "./filters.js";
+import { initMobileWarning } from "./mobile-warning.js";
 
 const canvas = document.getElementById("graph");
 const wrap = document.getElementById("canvasWrap");
@@ -25,6 +26,7 @@ initTheme(draw);
 initRibbonToggle(() => { resizeCanvas(); draw(); });
 initPanel(() => syncURL(true));
 initFilterControls();
+initMobileWarning();
 initCamera(canvas, wrap, clickedNode => {
   if (clickedNode) {
     if (clickedNode === store.selected) deselect();

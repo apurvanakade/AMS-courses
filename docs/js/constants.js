@@ -32,5 +32,14 @@ export const COMBINED_HUE = {
   s: (DEGREE_HUE.Undergraduate.s + DEGREE_HUE.Graduate.s) / 2,
 };
 
-export const COLUMN_WIDTH = 320;
 export const ROW_HEIGHT = 28;
+
+// Columns are sized to their widest label: LEVEL_GAP between levels,
+// titles cut at TITLE_MAX_CHARS, and the label font both layout
+// (measuring) and render (drawing) use.
+export const LEVEL_GAP = 48;
+export const TITLE_MAX_CHARS = 34;
+export const LABEL_FONT = "11px system-ui, sans-serif";
+// Smallest initial zoom: labels below this are too small to read, so the
+// initial fit pans instead of shrinking further.
+export const MIN_READABLE_SCALE = 0.85;

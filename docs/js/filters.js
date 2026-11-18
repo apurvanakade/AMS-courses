@@ -38,8 +38,10 @@ function syncURL(push) {
 }
 
 function restoreFromParams(params) {
-  const level = params.get("level");
-  store.degree = new Set(level ? level.split(",").filter(Boolean) : ["Undergraduate"]);
+  // Level is a one-of toggle. An old link naming both levels
+  // ("Undergraduate,Graduate") keeps its first one.
+  const level = (params.get("level") || "").split(",")[0];
+  store.degree = new Set([level === "Graduate" ? "Graduate" : "Undergraduate"]);
   const highlight = params.get("highlight");
   store.highlight = new Set(highlight ? highlight.split(",").filter(Boolean) : ["new", "season", "other"]);
   const term = params.get("term");
@@ -146,12 +148,13 @@ function initFilterControls() {
     relayout();
     applyFilters(true);
   });
-  document.querySelectorAll("#degreeLegend .chip[data-degree]").forEach(chip => {
-    const degree = chip.dataset.degree;
+  const degreeChips = document.querySelectorAll("#degreeLegend .chip[data-degree]");
+  degreeChips.forEach(chip => {
     const input = chip.querySelector("input");
     input.addEventListener("change", () => {
-      if (input.checked) store.degree.add(degree); else store.degree.delete(degree);
-      chip.classList.toggle("active", input.checked);
+      if (!input.checked) return;
+      store.degree = new Set([chip.dataset.degree]);
+      degreeChips.forEach(c => c.classList.toggle("active", c === chip));
       relayout();
       applyFilters(true);
     });
